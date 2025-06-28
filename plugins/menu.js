@@ -60,6 +60,8 @@ cmd(
 
       let madeMenu = `👋 *Hello  ${pushname}*
 
+🫟 *Wᴇʟᴄᴏᴍᴇ Tᴏ  𝐍𝐈𝐌𝐒𝐀𝐑𝐀 〽️𝐃*🫟
+
 ╭───────────●●►
 | *MAIN COMMANDS 🌟* 
 │    ➽.alive
@@ -70,7 +72,7 @@ cmd(
 ╰───────────●●►
 
 ╭───────────●●►
-| *DOWNLOAD COMMANDS ⬇* 
+| *DOWNLOAD COMMANDS 📥* 
 │    ➽.song <text>
 │    ➽.video <text>
 │    ➽.fb <link>
