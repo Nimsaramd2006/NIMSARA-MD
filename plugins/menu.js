@@ -62,45 +62,120 @@ cmd(
 🫟 *Wᴇʟᴄᴏᴍᴇ Tᴏ  𝐍𝐈𝐌𝐒𝐀𝐑𝐀 〽️𝐃*🫟
 
 ╭───────────●●►
-| *MAIN COMMANDS 🌟* 
-│    ➽.alive
-│    ➽.menu
-│    ➽.ai <text>
-│    ➽.system
-│    ➽.owner
+| 🌟*MAIN COMMANDS* 
 ╰───────────●●►
+
+┏▣ 
+┃ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.alive*
+┃ 🔖 𝐔𝐒𝐄 : Bot Online/Offline
+┗▣
+┏▣
+┃ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.menu*
+┃ 🔖 𝐔𝐒𝐄 : All Menu
+┗▣
+┏▣
+│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.ai* 
+┃ 🔖 𝐔𝐒𝐄 : .ai <test>
+┗▣
+┏▣
+│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.system*
+┃ 🔖 𝐔𝐒𝐄 : Bot Infor
+┗▣
+┏▣
+│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.owner*
+┃ 🔖 𝐔𝐒𝐄 : Owner Cmd
+┗▣
 
 ╭───────────●●►
-| *DOWNLOAD COMMANDS 📥* 
-│    ➽.song <text>
-│    ➽.video <text>
-│    ➽.fb <link>
+| 📥*DOWNLOAD COMMANDS*
 ╰───────────●●►
+
+┏▣
+│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.song* 
+┃ 🔖 𝐔𝐒𝐄 : .song <name / url>
+┗▣
+┏▣
+│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.video* 
+┃ 🔖 𝐔𝐒𝐄 : .video <name / url>
+┗▣
+┏▣
+│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.fb* 
+┃ 🔖 𝐔𝐒𝐄 : .fb <url>
+┗▣
 
 ╭───────────●●►
-| *GROUP COMMANDS 👥* 
-${menu.group}
+| 👥*GROUP COMMANDS* 
 ╰───────────●●►
+
+┏▣
+│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.add*
+│ 🔖 𝐔𝐒𝐄 : .add <9476########>
+┗▣
+┏▣
+│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.kick*
+│ 🔖 𝐔𝐒𝐄 : .kick <@~ / 9476########>
+┗▣
+┏▣
+│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.mute*
+│ 🔖 𝐔𝐒𝐄 : .mute 
+┗▣
+┏▣
+│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.unmute*
+│ 🔖 𝐔𝐒𝐄 : .unmute
+┗▣
+┏▣
+│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.left*
+│ 🔖 𝐔𝐒𝐄 : .left
+┗▣
+┏▣
+│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.promote*
+│ 🔖 𝐔𝐒𝐄 : .promote <@~ / 9476#####>
+┗▣
+┏▣
+│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.demote*
+│ 🔖 𝐔𝐒𝐄 : .demote <@~ / 9476#####>
+┗▣
 
 ╭───────────●●►
-| *OWNER COMMANDS 🧑‍💻* 
-│    ➽.restart
-│    ➽.update
+| 🧑‍💻*OWNER COMMANDS* 
 ╰───────────●●►
+┏▣
+│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.restart*
+│ 🔖 𝐔𝐒𝐄 : .restart wh bot
+┗▣
+┏▣
+│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.update*
+│ 🔖 𝐔𝐒𝐄 : .update wh bot
+┗▣
+┏▣
+│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.block*
+│ 🔖 𝐔𝐒𝐄 : .block user
+┗▣
+┏▣
+│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.left*
+│ 🔖 𝐔𝐒𝐄 : .left
+┗▣
 
 ╭───────────●●►
-| *CONVERT COMMANDS 🔄* 
-│    ➽.sticker <reply img>
-│    ➽.img <reply sticker>
-│    ➽.tr <lang><text>
-│    ➽.tts <text>
+| 🔄*CONVERT COMMANDS* 
 ╰───────────●●►
 
-╭───────────●●►
-| *SEARCH COMMANDS 🔍* 
-${menu.search}
-╰───────────●●►
-
+┏▣
+│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.sticker* 
+│ 🔖 𝐔𝐒𝐄 : .sticker <Img>
+┗▣
+┏▣
+│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.img* 
+│ 🔖 𝐔𝐒𝐄 : .img <sticker / gif>
+┗▣
+┏▣
+│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.trn* 
+│ 🔖 𝐔𝐒𝐄 : .trn <test>
+┗▣
+┏▣
+│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.tts* 
+│ 🔖 𝐔𝐒𝐄 : .tts <test>
+┗▣
 
 
 > Developed by MR.Rajindu Nimsara
