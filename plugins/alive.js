@@ -11,7 +11,7 @@ cmd({
 async(robin, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
     await robin.sendPresenceUpdate('recording', from);
-    await robin.sendMessage(from, { audio: { url: "https://files.catbox.moe/wtfov8.mp4" }, mimetype: 'audio/mpge', ptt: true }, { quoted: mek })
+    await robin.sendMessage(from, { audio: { url: "https://files.catbox.moe/wtfov8.mp3" }, mimetype: 'audio/mpeg', ptt: true }, { quoted: mek })
 return await robin.sendMessage(from,{image: {url: config.ALIVE_IMG},caption: config.ALIVE_MSG},{quoted: mek})
 
 
