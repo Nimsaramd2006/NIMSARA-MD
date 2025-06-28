@@ -296,4 +296,4 @@ async (robin, mek, m, { from, isGroup, isAdmins, isBotAdmins, reply, quoted }) =
         console.error("Promote Admin Error:", e);
         reply(`❌ *Failed to promote the user. Error: ${e.message}*`);
     }
-});
+
