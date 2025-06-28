@@ -59,28 +59,24 @@ cmd(
       const { title, sd, hd } = result;
 
       // Prepare and send the message with video details
-      let desc = `
-*💢 NIMSARA-MD FB DOWNLOADER 💢*
-
-> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃
-        `;
+   
       
       // Send the video if available
       if (hd) {
         await robin.sendMessage(
           from,
-          { video: { url: hd }, caption: "----------HD VIDEO----------" },
+          { video: { url: hd }, caption: "----------HD VIDEO----------\n\n> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃" },
           { quoted: mek }
         );
         await robin.sendMessage(
           from,
-          { video: { url: sd }, caption: "----------SD VIDEO----------" },
+          { video: { url: sd }, caption: "----------SD VIDEO----------\n\n> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃" },
           { quoted: mek }
         );
       } else if (sd) {
         await robin.sendMessage(
           from,
-          { video: { url: sd }, caption: "----------SD VIDEO----------" },
+          { video: { url: sd }, caption: "----------SD VIDEO----------\n\n> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃" },
           { quoted: mek }
         );
       } else {
