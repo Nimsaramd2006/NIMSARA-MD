@@ -59,32 +59,50 @@ cmd(
 
       let madeMenu = `👋 *Hello  ${pushname}*
 
+╭───────────●●►
+| *MAIN COMMANDS 🌟* 
+│    ➽.alive
+│    ➽.menu
+│    ➽.ai <text>
+│    ➽.system
+│    ➽.owner
+╰───────────●●►
 
-| *MAIN COMMANDS* |
-    ▫️.alive
-    ▫️.menu
-    ▫️.ai <text>
-    ▫️.system
-    ▫️.owner
-| *DOWNLOAD COMMANDS* |
-    ▫️.song <text>
-    ▫️.video <text>
-    ▫️.fb <link>
-| *GROUP COMMANDS* |
+╭───────────●●►
+| *DOWNLOAD COMMANDS ⬇* 
+│    ➽.song <text>
+│    ➽.video <text>
+│    ➽.fb <link>
+╰───────────●●►
+
+╭───────────●●►
+| *GROUP COMMANDS 👥* 
 ${menu.group}
-| *OWNER COMMANDS* |
-    ▫️.restart
-    ▫️.update
-| *CONVERT COMMANDS* |
-    ▫️.sticker <reply img>
-    ▫️.img <reply sticker>
-    ▫️.tr <lang><text>
-    ▫️.tts <text>
-| *SEARCH COMMANDS* |
+╰───────────●●►
+
+╭───────────●●►
+| *OWNER COMMANDS 🧑‍💻* 
+│    ➽.restart
+│    ➽.update
+╰───────────●●►
+
+╭───────────●●►
+| *CONVERT COMMANDS 🔄* 
+│    ➽.sticker <reply img>
+│    ➽.img <reply sticker>
+│    ➽.tr <lang><text>
+│    ➽.tts <text>
+╰───────────●●►
+
+╭───────────●●►
+| *SEARCH COMMANDS 🔍* 
 ${menu.search}
+╰───────────●●►
 
 
-🥶𝐌𝐚𝐝𝐞 𝐛𝐲 𝐒_𝐈_𝐇_𝐈_𝐋_𝐄_𝐋🥶
+
+> Developed by MR.Rajindu Nimsara
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃
 
 > ROBIN MENU MSG
 `;
@@ -92,7 +110,7 @@ ${menu.search}
         from,
         {
           image: {
-            url: "https://raw.githubusercontent.com/Dark-Robin/Bot-Helper/refs/heads/main/autoimage/Bot%20robin%20menu.jpg",
+            url: "https://i.ibb.co/5x5pG4X3/SulaMd.jpg",
           },
           caption: madeMenu,
         },
