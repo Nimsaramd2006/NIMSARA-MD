@@ -103,18 +103,7 @@ cmd(
         { quoted: mek }
       );
 
-      // Send as a document (optional)
-      await robin.sendMessage(
-        from,
-        {
-          document: { url: songData.download.url },
-          mimetype: "audio/mpeg",
-          fileName: `${data.title}.mp3`,
-          caption: "> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃",
-        },
-        { quoted: mek }
-      );
-
+     
     
     } catch (e) {
       console.log(e);
