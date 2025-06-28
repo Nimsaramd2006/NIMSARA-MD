@@ -10,11 +10,8 @@ cmd({
 async(robin, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
 const config = await readEnv();
-return await robin.sendMessage(from,{video: {url: config.ALIVE_VIDEO},image: {url: config.ALIVE_IMG},caption: config.ALIVE_MSG},{quoted: mek})
-const buttons = [
-  { buttonId: '.menu', buttonText: { displayText: '📜 MENU' }, type: 1 },
-  { buttonId: '.owner', buttonText: { displayText: '👤 OWNER' }, type: 1 }
-];
+return await robin.sendMessage(from,{image: {url: config.ALIVE_IMG},caption: config.ALIVE_MSG},{quoted: mek})
+
 
 }catch(e){
 console.log(e)
