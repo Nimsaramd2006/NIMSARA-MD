@@ -5,7 +5,7 @@ const { ytmp3 } = require("@vreden/youtube_scraper");
 cmd(
   {
     pattern: "song",
-    react: "🎵",
+    react: "🎶",
     desc: "Download Song",
     category: "download",
     filename: __filename,
@@ -40,7 +40,7 @@ cmd(
     }
   ) => {
     try {
-      if (!q) return reply("*නමක් හරි ලින්ක් එකක් හරි දෙන්න* 🌚❤️");
+      if (!q) return reply("*❌ Please give me a text or url that I want to search!*")
 
       // Search for the video
       const search = await yts(q);
@@ -49,16 +49,26 @@ cmd(
 
       // Song metadata description
       let desc = `
-*❤️ROBIN SONG DOWNLOADER❤️*
+🌟 *`NIMSARA-MD SONG DOWNLOADER`* 🌟
 
-👻 *title* : ${data.title}
-👻 *description* : ${data.description}
-👻 *time* : ${data.timestamp}
-👻 *ago* : ${data.ago}
-👻 *views* : ${data.views}
-👻 *url* : ${data.url}
+◈==================================◈
+╭──────────────────╮
+┃🎵 *title* : ${data.title}
+┃    
+┃💾 *description* : ${data.description}
+┃    
+┃⏱️ *time* : ${data.timestamp}
+┃    
+┃⏰ *ago* : ${data.ago}
+┃    
+┃📊 *views* : ${data.views}
+┃
+┃🔗 *url* : ${data.url}
+╰─────────────────╯
 
-𝐌𝐚𝐝𝐞 𝐛𝐲 𝐒_𝐈_𝐇_𝐈_𝐋_𝐄_𝐋
+⦁⦂⦁*━┉━┉━┉━┉━━┉━┉━┉━┉━┉━┉━┉━┉━┉┉┉━⦁⦂⦁
+
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃
 `;
 
       // Send metadata thumbnail message
@@ -100,12 +110,12 @@ cmd(
           document: { url: songData.download.url },
           mimetype: "audio/mpeg",
           fileName: `${data.title}.mp3`,
-          caption: "𝐌𝐚𝐝𝐞 𝐛𝐲 𝐒_𝐈_𝐇_𝐈_𝐋_𝐄_𝐋",
+          caption: "> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃",
         },
         { quoted: mek }
       );
 
-      return reply("*Thanks for using my bot* 🌚❤️");
+    
     } catch (e) {
       console.log(e);
       reply(`❌ Error: ${e.message}`);
