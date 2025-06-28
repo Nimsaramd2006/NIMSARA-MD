@@ -104,7 +104,7 @@ ${menu.search}
 > Developed by MR.Rajindu Nimsara
 > ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃
 
-> ROBIN MENU MSG
+
 `;
       await robin.sendMessage(
         from,
