@@ -1,114 +1,103 @@
-const { cmd, commands } = require("../command");
+const { cmd } = require("../command");
 const yts = require("yt-search");
-const { ytmp4 } = require("@vreden/youtube_scraper");
+const axios = require("axios");
 
 cmd(
-  {
-    pattern: "video",
-    react: "🎥",
-    desc: "Download Video",
-    category: "download",
-    filename: __filename,
-  },
-  async (
-    robin,
-    mek,
-    m,
-    {
-      from,
-      quoted,
-      body,
-      isCmd,
-      command,
-      args,
-      q,
-      isGroup,
-      sender,
-      senderNumber,
-      botNumber2,
-      botNumber,
-      pushname,
-      isMe,
-      isOwner,
-      groupMetadata,
-      groupName,
-      participants,
-      groupAdmins,
-      isBotAdmins,
-      isAdmins,
-      reply,
-    }
-  ) => {
-    try {
-      if (!q) return reply("*❌ Please give me a text or url that I want to search!*")
+  {
+    pattern: "video",
+    react: "🎥",
+    desc: "Download YouTube Video",
+    category: "download",
+    filename: __filename,
+  },
+  async (
+    robin,
+    mek,
+    m,
+    { from, quoted, body, isCmd, command, args, q, isGroup, sender, reply }
+  ) => {
+    try {
+      if (!q) return reply("*❌ Please give me a text or url that I want to search!*");
 
-      // Search for the video
-      const search = await yts(q);
-      const data = search.videos[0];
-      const url = data.url;
+      // Search for the video
+      const search = await yts(q);
+      const data = search.videos[0];
+      const url = data.url;
 
-      // Song metadata description
-      let desc = `
-🌟 *`NIMSARA-MD VIDEO DOWNLOADER`* 🌟
+      // Video metadata description
+      let desc = 🌟 NIMSARA-MD VIDEO DOWNLOADER 🌟
 
 ◈==================================◈
 ╭──────────────────╮
-┃🎵 *title* : ${data.title}
+┃🎵 title : ${data.title}
 ┃    
-┃💾 *description* : ${data.description}
+┃💾 description : ${data.description}
 ┃    
-┃⏱️ *time* : ${data.timestamp}
+┃⏱️ time : ${data.timestamp}
 ┃    
-┃⏰ *ago* : ${data.ago}
+┃⏰ ago : ${data.ago}
 ┃    
-┃📊 *views* : ${data.views}
+┃📊 views : ${data.views}
 ┃
-┃🔗 *url* : ${data.url}
+┃🔗 url : ${data.url}
 ╰─────────────────╯
 
 ⦁⦂⦁*━┉━┉━┉━┉━━┉━┉━┉━┉━┉━┉━┉━┉━┉┉┉━⦁⦂⦁
 
+
 > ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃
-`;
+;
 
-      // Send metadata thumbnail message
-      await robin.sendMessage(
-        from,
-        { image: { url: data.thumbnail }, caption: desc },
-        { quoted: mek }
-      );
+      // Send metadata and thumbnail message
+      await robin.sendMessage(
+        from,
+        { image: { url: data.thumbnail }, caption: desc },
+        { quoted: mek }
+      );
 
-      // Download the audio using @vreden/youtube_scraper
-      const quality = "128"; // Default quality
-      const songData = await ytmp4(url, quality);
+      // Video download function
+      const downloadVideo = async (url, quality) => {
+        const apiUrl = 'https://p.oceansaver.in/ajax/download.php?format=${quality}&url=${encodeURIComponent(url)}&api=dfcb6d76f2f6a9894gjkege8a4ab232222';
+        const response = await axios.get(apiUrl);
 
-      // Validate song duration (limit: 30 minutes)
-      let durationParts = data.timestamp.split(":").map(Number);
-      let totalSeconds =
-        durationParts.length === 3
-          ? durationParts[0] * 3600 + durationParts[1] * 60 + durationParts[2]
-          : durationParts[0] * 60 + durationParts[1];
+        if (response.data && response.data.success) {
+          const { id, title } = response.data;
 
-      if (totalSeconds > 1800) {
-        return reply("⏱️ audio limit is 30 minitues");
-      }
+          // Wait for download URL generation
+          const progressUrl = 'https://p.oceansaver.in/ajax/progress.php?id=${id}';
+          while (true) {
+            const progress = await axios.get(progressUrl);
+            if (progress.data.success && progress.data.progress === 1000) {
+              const videoBuffer = await axios.get(progress.data.download_url, {
+                responseType: "arraybuffer",
+              });
+              return { buffer: videoBuffer.data, title };
+            }
+            await new Promise((resolve) => setTimeout(resolve, 5000));
+          }
+        } else {
+          throw new Error("Failed to fetch video details.");
+        }
+      };
 
-      // Send audio file
-      await robin.sendMessage(
-        from,
-        {
-          audio: { url: songData.download.url },
-          mimetype: "video/mp4",
-        },
-        { quoted: mek }
-      );
+      // Specify desired quality (default: 720p)
+      const quality = "360";
 
-     
+      // Download and send video
+      const video = await downloadVideo(url, quality);
+      await robin.sendMessage(
+        from,
+        {
+          video: video.buffer,
+          caption: '🎥 *${video.title}*\n\n> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃',
+        },
+        { quoted: mek }
+      );
 
-    
-    } catch (e) {
-      console.log(e);
-      reply(`❌ Error: ${e.message}`);
-    }
-  }
+    
+    } catch (e) {
+      console.error(e);
+      reply('❌ Error: ${e.message}');
+    }
+  }
 );
