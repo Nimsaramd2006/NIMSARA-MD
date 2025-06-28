@@ -61,7 +61,7 @@ async function connectToWA() {
   const prefix = config.PREFIX;
   //===========================
 
-  console.log("Connecting 🧚‍♂️⃟🩵 " 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃" 🧚‍♂️⃟🩵");
+  console.log("Connecting 🧚‍♂️⃟🩵  𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃 🧚‍♂️⃟🩵");
   const { state, saveCreds } = await useMultiFileAuthState(
     __dirname + "/auth_info_baileys/"
   );
@@ -92,10 +92,10 @@ async function connectToWA() {
           require("./plugins/" + plugin);
         }
       });
-      console.log("🧚‍♂️⃟🩵 " 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃" 🧚‍♂️⃟🩵 installed successful ✅");
-      console.log("🧚‍♂️⃟🩵 " 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃" 🧚‍♂️⃟🩵 connected to whatsapp ✅");
+      console.log("🧚‍♂️⃟🩵  𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃 🧚‍♂️⃟🩵 installed successful ✅");
+      console.log("🧚‍♂️⃟🩵  𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃 🧚‍♂️⃟🩵 connected to whatsapp ✅");
 
-      let up = `🧚‍♂️⃟🩵 " 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃" 🧚‍♂️⃟🩵 connected successful ✅`;
+      let up = `🧚‍♂️⃟🩵  𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃 🧚‍♂️⃟🩵 connected successful ✅`;
       let up1 = `Hello RAJINDU NIMSAR, I made bot successful`;
 
       robin.sendMessage(ownerNumber + "@s.whatsapp.net", {
@@ -395,7 +395,7 @@ async function connectToWA() {
   });
 }
 app.get("/", (req, res) => {
-  res.send("HEY, 🧚‍♂️⃟🩵 " 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃" 🧚‍♂️⃟🩵 started✅");
+  res.send("HEY, 🧚‍♂️⃟🩵  𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃 🧚‍♂️⃟🩵 started✅");
 });
 app.listen(port, () =>
   console.log(`Server listening on port http://localhost:${port}`)
