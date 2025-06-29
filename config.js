@@ -17,4 +17,5 @@ module.exports = {
   AUTO_STICKER: process.env.AUTO_STICKER || "false",
   AUTO_REPLY: process.env.AUTO_REPLY || "true",
   GEMINI_API_KEY: process.env.GEMINI_API_KEY || "AIzaSyDv3Nv_G6cspA7ZxgkdlP5pXDvjm7sm7GA",
+  MOVIE_API_KEY: process.env.MOVIE_API_KEY || "https://api.skymansion.site/movies-dl",
 };
