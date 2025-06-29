@@ -18,14 +18,14 @@ cmd({
     filename: __filename
 }, async (robin, m, mek, { from, q, reply }) => {
     try {
-        if (!q || q.trim() === '') return await reply('❌ Please provide a movie name! (e.g., Deadpool)');
+        if (!q || q.trim() === '') return await reply('❌ *Please provide a movie name! (e.g., Deadpool)*');
 
         // Fetch movie search results
         const searchUrl = `${API_URL}?q=${encodeURIComponent(q)}&api_key=${API_KEY}`;
         let response = await fetchJson(searchUrl);
 
         if (!response || !response.SearchResult || !response.SearchResult.result.length) {
-            return await reply(`❌ No results found for: *${q}*`);
+            return await reply(`❌ *No results found for: *${q}**`);
         }
 
         const selectedMovie = response.SearchResult.result[0]; // Select first result
@@ -33,7 +33,7 @@ cmd({
         let detailsResponse = await fetchJson(detailsUrl);
 
         if (!detailsResponse || !detailsResponse.downloadLinks || !detailsResponse.downloadLinks.result.links.driveLinks.length) {
-            return await reply('❌ No PixelDrain download links found.');
+            return await reply('❌ *No PixelDrain download links found.*');
         }
 
         // Select the 720p PixelDrain link
@@ -41,7 +41,7 @@ cmd({
         const selectedDownload = pixelDrainLinks.find(link => link.quality === "SD 480p");
         
         if (!selectedDownload || !selectedDownload.link.startsWith('http')) {
-            return await reply('❌ No valid 480p PixelDrain link available.');
+            return await reply('❌ *No valid 480p PixelDrain link available.*');
         }
 
         // Convert to direct download link
@@ -66,7 +66,7 @@ cmd({
                 document: fs.readFileSync(filePath),
                 mimetype: 'video/mp4',
                 fileName: `${selectedMovie.title}-480p.mp4`,
-                caption: `🎬 *${selectedMovie.title}*\n📌 Quality: 480p\n✅ *Download Complete!*`,
+                caption: `📌 Quality: 480p\n\n> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃`,
                 quoted: mek 
             });
             fs.unlinkSync(filePath);
@@ -74,10 +74,10 @@ cmd({
 
         writer.on('error', async (err) => {
             console.error('Download Error:', err);
-            await reply('❌ Failed to download movie. Please try again.');
+            await reply('❌ *Failed to download movie. Please try again.*');
         });
     } catch (error) {
         console.error('Error in movie command:', error);
-        await reply('❌ Sorry, something went wrong. Please try again later.');
+        await reply('❌ *Sorry, something went wrong. Please try again later.*');
     }
 });
