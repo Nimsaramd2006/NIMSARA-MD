@@ -74,7 +74,7 @@ cmd(
       // Send metadata thumbnail message
       await robin.sendMessage(
         from,
-        { image: { url: data.thumbnail }, caption: desc },
+        { image: { url: data.thumbnail }, caption: '㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃' },
         { quoted: mek }
       );
 
