@@ -1,201 +1,230 @@
-const { cmd, commands } = require("../command");
-const config = require('../config');
+/**
 
-cmd(
-  {
+
+ Copyright (C) 2025.
+ Licensed under the  GPL-3.0 License;
+ You may not sell this script.
+ It is supplied in the hope that it may be useful.
+ * @project_name : Free Bot script
+ * @author : Malvin King <https://github.com/kingmalvn>
+ * @description : A Multi-functional whatsapp bot script.
+ * @version 3.0.0
+ **/
+
+const {readEnv} = require('../config')
+const {cmd , commands} = require('../command')
+const os = require("os")
+const {runtime} = require('../lib/functions')
+cmd({
     pattern: "menu",
-    alise: ["1"],
-    react: "📃",
-    desc: "get cmd list",
-    category: "main",
-    filename: __filename,
-  },
-  async (
-    robin,
-    mek,
-    m,
-    {
-      from,
-      quoted,
-      body,
-      isCmd,
-      command,
-      args,
-      q,
-      isGroup,
-      sender,
-      senderNumber,
-      botNumber2,
-      botNumber,
-      pushname,
-      isMe,
-      isOwner,
-      groupMetadata,
-      groupName,
-      participants,
-      groupAdmins,
-      isBotAdmins,
-      isAdmins,
-      reply,
-    }
-  ) => {
+    alias: ["list"],
+    desc: "bot's commands",
+    react: "📜",
+    category: "main"
+},
+async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
     try {
-      let menu = {
-        main: "",
-        download: "",
-        group: "",
-        owner: "",
-        convert: "",
-        search: "",
-      };
+        let desc = `*👋 Hello ${pushname}*
 
-      for (let i = 0; i < commands.length; i++) {
-        if (commands[i].pattern && !commands[i].dontAddCommandList) {
-          menu[
-            commands[i].category
-          ] += `${config.PREFIX}${commands[i].pattern}\n`;
-        }
-      }
+*╭─「 ${config.BOT_NAME} 」*
+*│◈ ʀᴜɴᴛɪᴍᴇ : ${runtime(process.uptime())}*
+*│◈ ʀᴀᴍ ᴜꜱᴀɢᴇ : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB*
+*│◈ ᴘʟᴀᴛꜰᴏʀᴍ : ${os.hostname()}*
+*│◈ ᴠᴇʀꜱɪᴏɴ : 1.0.5*
+*╰──────────●●►*
 
-      let madeMenu = `👋 *Hello  ${pushname}*
+*╭╼╼╼╼╼╼╼╼╼╼*
+*├ 1 • MAIN 🌟*
+*├ 2 • SEARCH 🔍*
+*├ 3 • DOWNLOAD ⬇*
+*├ 4 • GROUP 👥*
+*├ 5 • OWNER 🧑‍💻*
+*├ 6 • FUN 🤡*
+*╰╼╼╼╼╼╼╼╼╼╼*
 
-🫟 *Wᴇʟᴄᴏᴍᴇ Tᴏ  𝐍𝐈𝐌𝐒𝐀𝐑𝐀 〽️𝐃*🫟
+_*🌟 Reply with the Number you want to select*_
 
-╭───────────●●►
-| 🌟*MAIN COMMANDS* 
-╰───────────●●►
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽𝐃`;
 
-┏▣ 
-┃ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.alive*
-┃ 🔖 𝐔𝐒𝐄 : Bot Online/Offline
-┗▣
-┏▣
-┃ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.menu*
-┃ 🔖 𝐔𝐒𝐄 : All Menu
-┗▣
-┏▣
-│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.ai* 
-┃ 🔖 𝐔𝐒𝐄 : .ai <test>
-┗▣
-┏▣
-│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.system*
-┃ 🔖 𝐔𝐒𝐄 : Bot Infor
-┗▣
-┏▣
-│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.owner*
-┃ 🔖 𝐔𝐒𝐄 : Owner Cmd
-┗▣
+        const vv = await conn.sendMessage(from, { image: { url: config.MENU_IMG}, caption: desc }, { quoted: mek });
 
-╭───────────●●►
-| 📥*DOWNLOAD COMMANDS*
-╰───────────●●►
+        conn.ev.on('messages.upsert', async (msgUpdate) => {
+            const msg = msgUpdate.messages[0];
+            if (!msg.message || !msg.message.extendedTextMessage) return;
 
-┏▣
-│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.song* 
-┃ 🔖 𝐔𝐒𝐄 : .song <name / url>
-┗▣
-┏▣
-│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.video* 
-┃ 🔖 𝐔𝐒𝐄 : .video <name / url>
-┗▣
-┏▣
-│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.fb* 
-┃ 🔖 𝐔𝐒𝐄 : .fb <url>
-┗▣
+            const selectedOption = msg.message.extendedTextMessage.text.trim();
 
-╭───────────●●►
-| 👥*GROUP COMMANDS* 
-╰───────────●●►
+            if (msg.message.extendedTextMessage.contextInfo && msg.message.extendedTextMessage.contextInfo.stanzaId === vv.key.id) {
+                switch (selectedOption) {
+                    case '1':
+                    reply(`
+                    
 
-┏▣
-│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.add*
-│ 🔖 𝐔𝐒𝐄 : .add <9476########>
-┗▣
-┏▣
-│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.kick*
-│ 🔖 𝐔𝐒𝐄 : .kick <@~ / 9476########>
-┗▣
-┏▣
-│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.mute*
-│ 🔖 𝐔𝐒𝐄 : .mute 
-┗▣
-┏▣
-│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.unmute*
-│ 🔖 𝐔𝐒𝐄 : .unmute
-┗▣
-┏▣
-│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.left*
-│ 🔖 𝐔𝐒𝐄 : .left
-┗▣
-┏▣
-│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.promote*
-│ 🔖 𝐔𝐒𝐄 : .promote <@~ / 9476#####>
-┗▣
-┏▣
-│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.demote*
-│ 🔖 𝐔𝐒𝐄 : .demote <@~ / 9476#####>
-┗▣
+╔════════════════════════╗  
+║ 🔧 **𝗠𝗔𝗜𝗡 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧** 🔧 ║  
+╚════════════════════════╝  
 
-╭───────────●●►
-| 🧑‍💻*OWNER COMMANDS* 
-╰───────────●●►
-┏▣
-│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.restart*
-│ 🔖 𝐔𝐒𝐄 : .restart wh bot
-┗▣
-┏▣
-│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.update*
-│ 🔖 𝐔𝐒𝐄 : .update wh bot
-┗▣
-┏▣
-│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.block*
-│ 🔖 𝐔𝐒𝐄 : .block user
-┗▣
-┏▣
-│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.left*
-│ 🔖 𝐔𝐒𝐄 : .left
-┗▣
+╭─━─〔 ⚡ *COMMANDS* ⚡ 〕━━╮  
+┃ ◈ *.alive*
+┃ ◈ *.menu*  
+┃ ◈ *.menu2*  
+┃ ◈ *.system*  
+┃ ◈ *.ping*  
+┃ ◈ *.runtime*
+┃ ◈ *.jid*
+╰─━─━─━─━─━─━─━─━─╯  
 
-╭───────────●●►
-| 🔄*CONVERT COMMANDS* 
-╰───────────●●►
+📊 **Total Commands in MAIN:** 7  
+ 
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽𝐃
+  
 
-┏▣
-│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.sticker* 
-│ 🔖 𝐔𝐒𝐄 : .sticker <Img>
-┗▣
-┏▣
-│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.img* 
-│ 🔖 𝐔𝐒𝐄 : .img <sticker / gif>
-┗▣
-┏▣
-│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.trn* 
-│ 🔖 𝐔𝐒𝐄 : .trn <test>
-┗▣
-┏▣
-│ 📌 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 : *.tts* 
-│ 🔖 𝐔𝐒𝐄 : .tts <test>
-┗▣
+`);
+
+                        break;
+                    case '2':               
+                        reply(`
+
+╔════════════════════════╗  
+║ 🔍 **𝗦𝗘𝗔𝗥𝗖𝗛 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧** 🔍 ║  
+╚════════════════════════╝  
+
+╭─━〔 ⚡ *𝗖𝗢𝗠𝗠𝗔𝗡𝗗* ⚡ 〕━──━╮  
+┃ ◈ *.yts*  
+┃ ◈ *.image* 
+╰─━─━─━━─━─━─━─━─━─╯  
+
+📊 **Total Commands in SEARCH:** 2
+
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽𝐃
+
+`);
+                        break;
+                    case '3':               
+                        reply(`
+╔════════════════════════╗  
+║ 📥 **𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧** 📥 ║  
+╚════════════════════════╝  
+
+╭─━━〔 ⚡ *𝗖𝗢𝗠𝗠𝗔𝗡𝗗* ⚡ 〕━─━━╮  
+┃ ◈ *.apk*  
+┃ ◈ *.twitter*  
+┃ ◈ *.gdrive*  
+┃ ◈ *.mediafire*  
+┃ ◈ *.fb*  
+┃ ◈ *.video*   
+┃ ◈ *.song*  
+┃ ◈ *.tiktok*
+╰─━─━─━─━─━─━─━─━─━─╯  
+
+📊 **Total Commands in DOWNLOAD:** 12
+ 
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽𝐃
+ 
+
+`);
+                    
+                        break;
+                    case '4':               
+                        reply(`
+╔════════════════════════╗  
+║ 👥 **𝗚𝗥𝗢𝗨𝗣 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧** 👥 ║  
+╚════════════════════════╝  
+
+╭─━──━〔 ⚡ *𝗖𝗢𝗠𝗠𝗔𝗡𝗗* ⚡ 〕━─━╮  
+┃ ◈ *.mute*  
+┃ ◈ *.unmute*  
+┃ ◈ *.promote*  
+┃ ◈ *.demote*  
+┃ ◈ *.del*  
+┃ ◈ *.add*  
+┃ ◈ *.admins*  
+┃ ◈ *.groupdesc*  
+┃ ◈ *.groupinfo*  
+┃ ◈ *.gname*  
+┃ ◈ *.setsubjec**  
+┃ ◈ *.tagall*  
+┃ ◈ *.hidetag*  
+┃ ◈ *.unlock*  
+┃ ◈ *.lock*
+┃ ◈ *.gname*  
+┃ ◈ *.join*  
+┃ ◈ *.leave*  
+┃ ◈ *.invite*  
+┃ ◈ *.tagadmin*  
+╰─━─━─━─━─━─━─━─━─━━─╯  
+
+📊 **Total Commands in GROUP:** 20  
 
 
-> Developed by MR.Rajindu Nimsara
-> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽𝐃
+  
+`);
+                    break;
+                    case '5':               
+                        reply(`
+╔════════════════════════╗  
+║ 👨‍💻 **𝗢𝗪𝗡𝗘𝗥 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧** 👨‍💻 ║  
+╚════════════════════════╝  
 
+╭─━〔 ⚡ *𝗖𝗢𝗠𝗠𝗔𝗡𝗗* ⚡ 〕━──━╮ 
+┃ ◈ *.shutdown*  
+┃ ◈ *.alive*  
+┃ ◈ *.ping*  
+┃ ◈ *.clearchats*  
+┃ ◈ *.block*
+┃ ◈ *.unblock*
+┃ ◈ *.repo*
+┃ ◈ *.owner*
+┃ ◈ *.owner2*
+╰─━━─━─━──━─━─━━─━─╯  
 
-`;
-      await robin.sendMessage(
-        from,
-        {
-          image: {
-            url: "https://i.ibb.co/5x5pG4X3/SulaMd.jpg",
-          },
-          caption: madeMenu,
-        },
-        { quoted: mek }
-      );
+📊 **Total Commands in Owner:** 9
+
+ 
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽𝐃 
+
+`);
+                    break;
+                    case '6':               
+                        reply(`
+╔════════════════════════╗  
+║ 👨‍💻 **𝐓𝐎𝐎𝐋𝐒 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧** 👨‍💻 ║  
+╚════════════════════════╝  
+
+╭─━〔 ⚡ *𝗖𝗢𝗠𝗠𝗔𝗡𝗗* ⚡ 〕━──━╮ 
+┃ ◈ *.joke*  
+┃ ◈ *.flirt*  
+┃ ◈ *.truth*  
+┃ ◈ *.dare*  
+┃ ◈ *.fact*
+┃ ◈ *.pickupline*
+┃ ◈ *.character*
+┃ ◈ *.repeat*
+┃ ◈ *.spam*
+┃ ◈ *.readmore*
+╰─━━─━─━──━─━─━━─━─╯  
+
+📊 **Total Commands in Owner:** 10
+
+ 
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽𝐃  
+
+`);
+                       
+                        
+                    break;
+                    default:
+                    
+                        reply("Invalid option. Please select a valid option🔴");
+                }
+
+            }
+        });
+
     } catch (e) {
-      console.log(e);
-      reply(`${e}`);
+        console.error(e);
+        await conn.sendMessage(from, { react: { text: '❌', key: mek.key } })
+        reply('An error occurred while processing your request.');
     }
-  }
-);
+});
