@@ -90,6 +90,7 @@ cmd(
         {
           video: video.buffer,
           caption: '🎥 *${video.title}*\n\n> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃',
+          react: "✔️"
         },
         { quoted: mek }
       );
