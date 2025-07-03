@@ -6,7 +6,7 @@ cmd({
     pattern: "hack",
     desc: "Displays a dynamic and playful 'Hacking' message for fun.",
     category: "fun",
-    react: "👨‍💻",
+    react: "☠️",
     filename: __filename
 },
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
@@ -40,7 +40,10 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             '⚠️ *Reminder:* Ethical hacking is the only way to ensure security.',
             '⚠️ *Reminder:* Strong hacking is the only way to ensure security.',
             '',
-            ' *👨‍💻 YOUR DATA HACK SUCCESSFULLY 👩‍💻☣*'
+            ' *👨‍💻 YOUR DATA HACK SUCCESSFULLY 👩‍💻☣*,'
+            '',
+            '',
+            '> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽'
         ];
 
         for (const line of steps) {
