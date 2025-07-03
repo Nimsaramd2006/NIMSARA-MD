@@ -6,7 +6,7 @@ cmd(
   {
     pattern: "song",
     react: "🎶",
-    desc: "Download Song",
+    desc: "Download YouTube Song (Audio)",
     category: "download",
     filename: __filename,
   },
@@ -77,6 +77,10 @@ cmd(
         { image: { url: data.thumbnail }, caption: desc },
         { quoted: mek }
       );
+
+      await conn.sendMessage(from, {
+            react: { text: '✅', key: mek.key }
+        });
 
       // Download the audio using @vreden/youtube_scraper
       const quality = "128"; // Default quality
