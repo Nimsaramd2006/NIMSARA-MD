@@ -19,16 +19,16 @@ try{
 
 let dec = `*👋 Hello ${pushname}*
 
-*👨‍💻Your Botname 👨‍💻*
+*👨‍💻 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽𝐃👨‍💻*
 
 > *𝗢𝗪𝗡𝗘𝗥 𝗜𝗡𝗙𝗢* 
 
-*⚡Owner name -: your name*
-*⚡Number* -: your number
+*⚡Owner name -: R.RAJINDU NIMSARA*
+*⚡Number* -: +94766351670
 
- ⚡️◦ https://whatsapp.com/channel/0029Vac8SosLY6d7CAFndv3
+ ⚡️◦ https://chat.whatsapp.com/JX7gtZYtbHn9C1V1k9ydCK
 
-> *Powered by your name*
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽
 `;
 await conn.sendMessage(from,{image:{url:config.MENU_IMG},caption:dec},{quoted:mek});
 
@@ -51,14 +51,14 @@ try{
 
 let dec = `*📍ℝ𝔼ℙ𝕆-𝕃𝕀ℕ𝕂 ❤️‍🔥👇*
 
-👨‍💻◦https://github.com/your github username/Botname
+👨‍💻◦Privet BOT
 
 
 *📍ℙ𝕃𝔼𝔸𝕊𝔼 𝔽𝕆𝕃𝕃𝕆𝕎 𝕄𝕐 𝕎ℍ𝔸𝕋𝕊𝔸ℙℙ ℂℍ𝔸ℕℕ𝔼𝕃 ❤️‍🔥👇*
 
-👨‍💻◦ https://whatsapp.com/channel/0029Vac8SosLY6d7CAFndv3Z
+👨‍💻◦ https://chat.whatsapp.com/JX7gtZYtbHn9C1V1k9ydCK
 
-> *Powered by yourname*
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽
 `;
 await conn.sendMessage(from,{image:{url: config.MENU_IMG},caption:dec},{quoted:mek});
 
@@ -72,6 +72,7 @@ cmd({
     alias: ["status","botinfo"],
     desc: "Check up time , ram usage and more",
     category: "owner",
+    react: "🛡️",
     filename: __filename
 },
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
@@ -80,11 +81,11 @@ let status = `┌─────────────────────
 ├ ⏰ *Runtime:-* ${runtime(process.uptime())}
 ├ 📟 *Ram usage:-* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
 ├ ⚙️ *Platform:-* ${os.hostname()}
-├ 👨‍💻 *Owners:-* your name
+├ 👨‍💻 *Owners:-* R.RAJINDU NIMSARA
 ├ 🧬 *Version:-* 1.0.0
 └───────────────────────
 
-> *𝘗𝘖𝘞𝘌𝘙𝘌𝘋 𝘣𝘺 Your Botname*
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽𝐃
 `;
 return reply(`${status}`)
   
@@ -94,27 +95,12 @@ reply(`${e}`)
 
 }
 })
-cmd({
-    pattern: "alive",
-    desc: "Check bot online or no.",
-    react: "👋",
-    category: "owner",
-    filename: __filename
-},
-async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-try{
-return await conn.sendMessage(from,{image: {url: config.ALIVE_IMG},caption: config.ALIVE_MSG},{quoted: mek})
-}catch(e){
-console.log(e)
-reply(`${e}`)
-}
-});
 
 cmd({
     pattern: "jid",
     desc: "Get the JID of the chat.",
     category: "owner",
-   // react: "🔍",
+    react: "🔍",
     filename: __filename
 }, async (conn, mek, m, { from, reply }) => {
     try {
@@ -206,47 +192,9 @@ async (conn, mek, m, { from, isOwner, quoted, reply }) => {
     }
 });
 
-// 4. Block User
-cmd({
-    pattern: "block",
-    desc: "Block a user.",
-    category: "owner",
-    react: "🚫",
-    filename: __filename
-},
-async (conn, mek, m, { from, isOwner, quoted, reply }) => {
-    if (!isOwner) return reply("❌ You are not the owner!");
-    if (!quoted) return reply("❌ Please reply to the user you want to block.");
 
-    const user = quoted.sender;
-    try {
-        await conn.updateBlockStatus(user, 'block');
-        reply(`🚫 User ${user} blocked successfully.`);
-    } catch (error) {
-        reply(`❌ Error blocking user: ${error.message}`);
-    }
-});
 
-// 5. Unblock User
-cmd({
-    pattern: "unblock",
-    desc: "Unblock a user.",
-    category: "owner",
-    react: "✅",
-    filename: __filename
-},
-async (conn, mek, m, { from, isOwner, quoted, reply }) => {
-    if (!isOwner) return reply("❌ You are not the owner!");
-    if (!quoted) return reply("❌ Please reply to the user you want to unblock.");
 
-    const user = quoted.sender;
-    try {
-        await conn.updateBlockStatus(user, 'unblock');
-        reply(`✅ User ${user} unblocked successfully.`);
-    } catch (error) {
-        reply(`❌ Error unblocking user: ${error.message}`);
-    }
-});
 
 
 // 6. Clear All Chats
