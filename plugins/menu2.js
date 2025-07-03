@@ -12,7 +12,7 @@ const config = require('../config')
 const {cmd , commands} = require('../command')
 cmd({
     pattern: "menu2",
-    react: "👾",
+    react: "📜",
     desc: "get cmd list",
     category: "main",
     filename: __filename
@@ -41,28 +41,28 @@ let madeMenu = `*╭─────────────────❒⁠⁠
      *${pushname}*
 
 ┏━━━━━━━━━━━━━━━━━━━━
-   *Welcome to Botname 2nd Menu*
+   *Welcome to 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽𝐃 2nd Menu*
 ┗━━━━━━━━━━━━━━━━━━━━
 
-*Created by your name👨🏻‍💻*
+*Created By R.Rajindu Nimsara👨🏻‍💻*
 
 
 *╭───────────────❒⁠⁠⁠⁠*
-*│* *❂ DOWNLOAD CMDS❂*
+*│* *❂ DOWNLOAD CMDS 📥❂*
 *┕───────────────❒*
 *╭──────────●●►*
 ${menu.download}
 *╰──────────●●►*
 
 *╭───────────────❒⁠⁠⁠⁠*
-*│* *❂MAIN CMDS❂*
+*│* *❂MAIN CMDS 🔧❂*
 *┕───────────────❒*
 *╭──────────●●►*
 ${menu.main}
 *╰──────────●●►*
 
 *╭───────────────❒⁠⁠⁠⁠*
-*│* *❂GROUP CMDS❂*
+*│* *❂GROUP CMDS 👥❂*
 *┕───────────────❒*
 
 *╭──────────●●►*
@@ -70,7 +70,7 @@ ${menu.group}
 *╰──────────●●►*
 
 *╭───────────────❒⁠⁠⁠⁠*
-*│* *❂OWNER CMDS❂*
+*│* *❂OWNER CMDS 👨‍💻❂*
 *┕───────────────❒*
 
 *╭──────────●●►*
@@ -78,7 +78,7 @@ ${menu.owner}
 *╰──────────●●►*
 
 *╭───────────────❒⁠⁠⁠⁠*
-*│* *❂CONVERTER CMDS❂*
+*│* *❂CONVERTER CMDS 🔄❂*
 *┕───────────────❒*
 
 *╭──────────●●►*
@@ -86,7 +86,7 @@ ${menu.convert}
 *╰──────────●●►*
 
 *╭─────────────────❒⁠⁠⁠⁠*
-*│* *❂SEARCH CMDS ❂*
+*│* *❂SEARCH CMDS 🔍❂*
 *┕─────────────────❒*
 
 *╭──────────●●►*
@@ -94,7 +94,7 @@ ${menu.search}
 *╰──────────●●►*
 
 
-> *Powered by botname*
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽𝐃
 
 `;
 
