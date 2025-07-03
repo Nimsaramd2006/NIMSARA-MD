@@ -103,6 +103,7 @@ cmd(
         {
           audio: { url: songData.download.url },
           mimetype: "audio/mpeg",
+          react: "✔️"
         },
         { quoted: mek }
       );
