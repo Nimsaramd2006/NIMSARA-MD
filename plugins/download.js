@@ -27,6 +27,7 @@ cmd({
   alias: ["tweet", "twdl"],
   desc: "Download Twitter videos",
   category: "download",
+  react: "⬇️",
   filename: __filename
 }, async (conn, m, store, {
   from,
@@ -52,12 +53,12 @@ cmd({
 
     const { desc, thumb, video_sd, video_hd } = data.result;
 
-    const caption = `╭════ 〔 *Your Botname* 〕════❐\n`
+    const caption = `╭════ 〔 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽𝐃 〕════❐\n`
       + `┃▸ *Description:* ${desc || "No description"}\n`
       + `╰═════════════════❐\n\n`
       + `📹 *Download Options:*\n`
       + `1️⃣  *SD Quality*\n`
-      + `2️⃣  *HD Quality*\n`
+      + `2️⃣  *HD Quality*\n\n`
       + `🎵 *Audio Options:*\n`
       + `3️⃣  *Audio*\n`
       + `4️⃣  *Document*\n`
@@ -88,21 +89,24 @@ cmd({
           case "1":
             await conn.sendMessage(senderID, {
               video: { url: video_sd },
-              caption: "📥 *Downloaded in SD Quality*"
+              caption: "📥 *Downloaded in SD Quality*",
+              react: "✔️"
             }, { quoted: receivedMsg });
             break;
 
           case "2":
             await conn.sendMessage(senderID, {
               video: { url: video_hd },
-              caption: "📥 *Downloaded in HD Quality*"
+              caption: "📥 *Downloaded in HD Quality*",
+              react: "✔️"
             }, { quoted: receivedMsg });
             break;
 
           case "3":
             await conn.sendMessage(senderID, {
               audio: { url: video_sd },
-              mimetype: "audio/mpeg"
+              mimetype: "audio/mpeg",
+              react: "✔️"
             }, { quoted: receivedMsg });
             break;
 
@@ -111,7 +115,8 @@ cmd({
               document: { url: video_sd },
               mimetype: "audio/mpeg",
               fileName: "Twitter_Audio.mp3",
-              caption: "📥 *Audio Downloaded as Document*"
+              caption: "📥 *Audio Downloaded as Document*",
+              react: "✔️"
             }, { quoted: receivedMsg });
             break;
 
@@ -119,7 +124,8 @@ cmd({
             await conn.sendMessage(senderID, {
               audio: { url: video_sd },
               mimetype: "audio/mp4",
-              ptt: true
+              ptt: true,
+              react: "✔️"
             }, { quoted: receivedMsg });
             break;
 
@@ -141,7 +147,7 @@ cmd({
   pattern: "mediafire",
   alias: ["mfire"],
   desc: "To download MediaFire files.",
-  react: "🎥",
+  react: "📥",
   category: "download",
   filename: __filename
 }, async (conn, m, store, {
@@ -255,7 +261,7 @@ cmd({
 cmd({
   pattern: "gdrive",
   desc: "Download Google Drive files.",
-  react: "🌐",
+  react: "🗂️",
   category: "download",
   filename: __filename
 }, async (conn, m, store, {
