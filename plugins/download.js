@@ -237,7 +237,7 @@ cmd({
 ┃ 📅 *ᴜᴘᴅᴀᴛᴇᴅ ᴏɴ:* ${app.updated}
 ┃ 👨🏻‍💻 *ᴅᴇᴠᴇʟᴏᴘᴇʀ:* ${app.developer.name}
 ╰══════════════════❐
-> *Powered by your botname🎐*`;
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃`;
 
     await conn.sendMessage(from, { react: { text: "⬆️", key: m.key } });
 
@@ -288,7 +288,7 @@ cmd({
         document: { url: downloadUrl },
         mimetype: response.data.result.mimetype,
         fileName: response.data.result.fileName,
-        caption: "> *Powered by your Botname 🎐*"
+        caption: "> *㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃*"
       }, { quoted: m });
 
       await conn.sendMessage(from, { react: { text: "✅", key: m.key } });
