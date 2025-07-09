@@ -20,7 +20,7 @@ async (conn,mek, m, { from, body, isGroup, isAdmins, isBotAdmins, reply, sender 
         
         if (containsBadWord & config.ANTI_BAD_WORD === 'true') {
           await conn.sendMessage(from, { delete: mek.key }, { quoted: mek });
-          await conn.sendMessage(from, { text: "🚫 ⚠️BAD WORDS NOT ALLOWED⚠️ 🚫" }, { quoted: mek });
+          await conn.sendMessage(from, { text: "🚫 ⚠️𝐁𝐀𝐃 𝐖𝐎𝐑𝐃𝐒 𝐍𝐎𝐓 𝐀𝐋𝐋𝐎𝐖𝐄𝐃⚠️ 🚫" }, { quoted: mek });
         }
     } catch (error) {
         console.error(error)
@@ -65,6 +65,6 @@ cmd({
         }
     } catch (error) {
         console.error(error);
-        reply("*_ʟɪɴᴋ ᴅᴇʟᴇᴛᴇ sᴜᴄᴄᴇssғᴜʟ✓_*");
+        reply("𝐋𝐈𝐍𝐊 𝐃𝐄𝐋𝐄𝐓𝐄 𝐒𝐔𝐂𝐂𝐄𝐒𝐒 ✔️");
     }
 });
