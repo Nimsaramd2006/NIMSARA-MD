@@ -16,6 +16,7 @@ const fg = require('api-dylux')
 const yts = require('yt-search')
 cmd({
     pattern: "play2",
+    alias: ["play"],
     desc: "To download songs.",
     react: "🎵",
     category: "download",
@@ -44,6 +45,26 @@ let desc = `
 
 
 > *© Powered by your botname* 
+
+🌟 *NIMSARA-MD SONG DOWNLOADER* 🌟
+
+◈==================================◈
+╭──────────────────╮
+┃🎵 *title* : ${data.title}
+┃    
+┃⏱️ *time* : ${data.timestamp}
+┃    
+┃⏰ *ago* : ${data.ago}
+┃    
+┃📊 *views* : ${data.views}
+┃
+┃🔗 *url* : ${data.url}
+╰─────────────────╯
+
+⦁⦂⦁*━┉━┉━┉━┉━━┉━┉━┉━┉━┉━┉━┉━┉━┉┉┉━⦁⦂⦁
+
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃
+
 `
 
 await conn.sendMessage(from,{image:{url: data.thumbnail},caption:desc},{quoted:mek});
