@@ -30,7 +30,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 *│◈ ʀᴜɴᴛɪᴍᴇ : ${runtime(process.uptime())}*
 *│◈ ʀᴀᴍ ᴜꜱᴀɢᴇ : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB*
 *│◈ ᴘʟᴀᴛꜰᴏʀᴍ : ${os.hostname()}*
-*│◈ ᴠᴇʀꜱɪᴏɴ : 3.0.0*
+*│◈ ᴠᴇʀꜱɪᴏɴ : 1.0.5*
 *╰──────────●●►*
 
 *╭╼╼╼╼╼╼╼╼╼╼*
@@ -42,9 +42,9 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 *├ 6 • FUN*
 *╰╼╼╼╼╼╼╼╼╼╼*
 
-_*🌟 Reply with the Number you want to select*_
+🌟 𝐑𝐞𝐩𝐥𝐲 𝐰𝐢𝐭𝐡 𝐭𝐡𝐞 𝐍𝐮𝐦𝐛𝐞𝐫 𝐲𝐨𝐮 𝐰𝐚𝐧𝐭 𝐭𝐨 𝐬𝐞𝐥𝐞𝐜𝐭
 
-> *𝙋𝙊𝙒𝙀𝙍𝙀𝘿 𝘽𝙔 your Botname*`;
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃`;
 
         const vv = await conn.sendMessage(from, { image: { url: config.MENU_IMG}, caption: desc }, { quoted: mek });
 
@@ -61,22 +61,22 @@ _*🌟 Reply with the Number you want to select*_
                     
 
 ╔════════════════════════╗  
-║ 🔧 **𝗠𝗔𝗜𝗡 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧** 🔧 ║  
+║ 🔧 𝐌𝐀𝐈𝐍 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 🔧 ║  
 ╚════════════════════════╝  
 
-╭─━─〔 ⚡ **Commands** ⚡ 〕━━╮  
-┃ ◈ **alive**
-┃ ◈ **menu**  
-┃ ◈ **menu2**  
-┃ ◈ **system**  
-┃ ◈ **ping**  
-┃ ◈ **runtime**
-┃ ◈ **jid**
+╭─━─〔 ⚡ 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 ⚡ 〕━━╮  
+┃ ◈ *alive*
+┃ ◈ *menu**  
+┃ ◈ *menu2* 
+┃ ◈ *system*  
+┃ ◈ *ping*  
+┃ ◈ *runtime*
+┃ ◈ *jid*
 ╰─━─━─━─━─━─━─━─━─╯  
 
-📊 **Total Commands in MAIN:** 7  
+📊 𝐓𝐨𝐭𝐚𝐥 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐢𝐧 𝐌𝐀𝐈𝐍: 7  
  
-> 💡 **𝙋𝙊𝙒𝙀𝙍𝙀𝘿 𝘽𝙔 Your Botname**  
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃  
 
 `);
 
@@ -84,132 +84,129 @@ _*🌟 Reply with the Number you want to select*_
                     case '2':               
                         reply(`
 
-╔════════════════════════╗  
-║ 🔍 **𝗦𝗘𝗔𝗥𝗖𝗛 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧** 🔍 ║  
-╚════════════════════════╝  
+╔══════════════════════════╗  
+║ 🔍 𝐒𝐄𝐀𝐑𝐂𝐇 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 🔍 ║  
+╚══════════════════════════╝  
 
-╭─━〔 ⚡ **Commands** ⚡ 〕━──━╮  
-┃ ◈ **yts**  
-┃ ◈ **image** 
+╭─━〔 ⚡ 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 ⚡ 〕━──━╮  
+┃ ◈ *yts*  
+┃ ◈ *image* 
 ╰─━─━─━━─━─━─━─━─━─╯  
 
-📊 **Total Commands in SEARCH:** 2
+📊 𝐓𝐨𝐭𝐚𝐥 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐢𝐧 𝐒𝐄𝐀𝐑𝐂𝐇: 2
 
-> 💡 **𝙋𝙊𝙒𝙀𝙍𝙀𝘿 𝘽𝙔 your Botname**
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃
 `);
                         break;
                     case '3':               
                         reply(`
-╔════════════════════════╗  
-║ 📥 **𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧** 📥 ║  
-╚════════════════════════╝  
+╔══════════════════════════════╗  
+║ 📥 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 📥 ║  
+╚══════════════════════════════╝  
 
-╭─━━〔 ⚡ **Commands** ⚡ 〕━─━━╮  
-┃ ◈ **apk**  
-┃ ◈ **twitter**  
-┃ ◈ **gdrive**  
-┃ ◈ **mediafire**  
-┃ ◈ **fb**  
-┃ ◈ **play**
-┃ ◈ **play2**  
-┃ ◈ **video**   
-┃ ◈ **video2**  
-┃ ◈ **yta**  
-┃ ◈ **tiktok**
-┃ ◈ **ytmp3**
+╭─━━〔 ⚡ 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 ⚡ 〕━─━━╮  
+┃ ◈ *apk*  
+┃ ◈ *twitter*  
+┃ ◈ *gdrive*  
+┃ ◈ *mediafire*  
+┃ ◈ *fb*  
+┃ ◈ *play*
+┃ ◈ *play2*  
+┃ ◈ *video*   
+┃ ◈ *video2*  
+┃ ◈ *yta*  
+┃ ◈ *tiktok*
+┃ ◈ *ytmp3*
 ╰─━─━─━─━─━─━─━─━─━─╯  
 
-📊 **Total Commands in DOWNLOAD:** 12
+📊 𝐓𝐨𝐭𝐚𝐥 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐢𝐧 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃: 12
  
-> 💡 **𝙋𝙊𝙒𝙀𝙍𝙀𝘿 𝘽𝙔 your Botname**  
-
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃
 `);
                     
                         break;
                     case '4':               
                         reply(`
-╔════════════════════════╗  
-║ 👥 **𝗚𝗥𝗢𝗨𝗣 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧** 👥 ║  
-╚════════════════════════╝  
+╔═════════════════════════╗  
+║ 👥 𝐆𝐑𝐎𝐔𝐏 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 👥 ║  
+╚═════════════════════════╝  
 
-╭─━──━〔 ⚡ **Commands** ⚡ 〕━─━╮  
-┃ ◈ **mute**  
-┃ ◈ **unmute**  
-┃ ◈ **promote**  
-┃ ◈ **demote**  
-┃ ◈ **del**  
-┃ ◈ **add**  
-┃ ◈ **admins**  
-┃ ◈ **groupdesc**  
-┃ ◈ **groupinfo**  
-┃ ◈ **gname**  
-┃ ◈ **setsubject**  
-┃ ◈ **tagall**  
-┃ ◈ **hidetag**  
-┃ ◈ **unlock**  
-┃ ◈ **lock**
-┃ ◈ **gname**  
-┃ ◈ **join**  
-┃ ◈ **leave**  
-┃ ◈ **invite**  
-┃ ◈ **tagadmin**  
+╭─━──━〔 ⚡ 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 ⚡ 〕━─━╮  
+┃ ◈ *mute*  
+┃ ◈ *unmute*  
+┃ ◈ *promote*  
+┃ ◈ *demote*  
+┃ ◈ *del*  
+┃ ◈ *add*  
+┃ ◈ *admins*  
+┃ ◈ *groupdesc*  
+┃ ◈ *groupinfo*  
+┃ ◈ *gname*  
+┃ ◈ *setsubject*  
+┃ ◈ *tagall*  
+┃ ◈ *hidetag*  
+┃ ◈ *unlock*  
+┃ ◈ *lock*
+┃ ◈ *gname*  
+┃ ◈ *join*  
+┃ ◈ *leave*  
+┃ ◈ *invite*  
+┃ ◈ *tagadmin*  
 ╰─━─━─━─━─━─━─━─━─━━─╯  
 
-📊 **Total Commands in GROUP:** 20  
+📊 𝐓𝐨𝐭𝐚𝐥 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐢𝐧 𝐆𝐑𝐎𝐔𝐏: 20  
 
 
-> 💡 **𝙋𝙊𝙒𝙀𝙍𝙀𝘿 𝘽𝙔 Your Botname**  
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃
 `);
                     break;
                     case '5':               
                         reply(`
-╔════════════════════════╗  
-║ 👨‍💻 **𝗢𝗪𝗡𝗘𝗥 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧** 👨‍💻 ║  
-╚════════════════════════╝  
+╔══════════════════════════╗  
+║ 👨‍💻 𝐎𝐖𝐍𝐄𝐑 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 👨‍💻 ║  
+╚══════════════════════════╝  
 
-╭─━〔 🍿 **Commands** 🍿 〕━──━╮ 
-┃ ◈ **shutdown**  
-┃ ◈ **alive**  
-┃ ◈ **ping**  
-┃ ◈ **clearchats**  
-┃ ◈ **block**
-┃ ◈ **unblock**
-┃ ◈ **repo**
-┃ ◈ **owner**
-┃ ◈ **owner2**
+╭─━〔 ⚡ 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 ⚡ 〕━──━╮ 
+┃ ◈ *shutdown*  
+┃ ◈ *alive*  
+┃ ◈ *ping*  
+┃ ◈ *clearchats*  
+┃ ◈ *block*
+┃ ◈ *unblock*
+┃ ◈ *repo*
+┃ ◈ *owner*
+┃ ◈ *owner2*
 ╰─━━─━─━──━─━─━━─━─╯  
 
-📊 **Total Commands in Owner:** 9
+📊 𝐓𝐨𝐭𝐚𝐥 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐢𝐧 𝐎𝐰𝐧𝐞𝐫: 9
 
  
-> 💡 **𝙋𝙊𝙒𝙀𝙍𝙀𝘿 𝘽𝙔 your Botname**  
-
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃 
 `);
                     break;
                     case '6':               
                         reply(`
-╔════════════════════════╗  
-║ 👨‍💻 **𝐓𝐎𝐎𝐋𝐒 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧** 👨‍💻 ║  
-╚════════════════════════╝  
+╔═════════════════════════╗  
+║ 🧰 𝐓𝐎𝐎𝐋𝐒 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 🧰 ║  
+╚═════════════════════════╝  
 
-╭─━〔 🍿 **Commands** 🍿 〕━──━╮ 
-┃ ◈ **joke**  
-┃ ◈ **flirt**  
-┃ ◈ **truth**  
-┃ ◈ **dare**  
-┃ ◈ **fact**
-┃ ◈ **pickupline**
-┃ ◈ **character**
-┃ ◈ **repeat**
-┃ ◈ **spam**
-┃ ◈ **readmore**
+╭─━〔 ⚡ 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 ⚡ 〕━──━╮ 
+┃ ◈ *joke*  
+┃ ◈ *flirt*  
+┃ ◈ *truth*  
+┃ ◈ *dare*  
+┃ ◈ *fact*
+┃ ◈ *pickupline*
+┃ ◈ *character*
+┃ ◈ *repeat*
+┃ ◈ *spam*
+┃ ◈ *readmore*
 ╰─━━─━─━──━─━─━━─━─╯  
 
-📊 **Total Commands in Owner:** 10
+📊 𝐓𝐨𝐭𝐚𝐥 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐢𝐧 𝐎𝐰𝐧𝐞𝐫: 10
 
  
-> 💡 **𝙋𝙊𝙒𝙀𝙍𝙀𝘿 𝘽𝙔 your Botname**  
-
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃
 `);
                        
                         
