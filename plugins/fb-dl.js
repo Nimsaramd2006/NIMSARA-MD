@@ -6,6 +6,7 @@ cmd({
   pattern: 'fb',
   alias: ['fbdl', 'facebook'],
   desc: 'Download Facebook videos and reels by providing the video URL.',
+  react: "⬇️",
   category: 'utility',
   use: '.fbdl <facebook_url>',
   filename: __filename,
@@ -13,7 +14,7 @@ cmd({
   try {
     const fbUrl = args.join(" ");
     if (!fbUrl) {
-      return reply('*𝐏ℓєαʂє 𝐏ɼ๏νιɖє 𝐀 fb҇ 𝐕ιɖє๏ ๏ɼ ɼєєℓ 𝐔ɼℓ..*');
+      return reply('*Please Provide A FB Video URL..*');
     }
 
     // Fetch video download links from the API
@@ -22,7 +23,7 @@ cmd({
     const response = await axios.get(apiUrl);
 
     if (!response.data || !response.data.result || !response.data.result.sd) {
-      return reply('*𝐏ℓєαʂє 𝐏ɼ๏νιɖє 𝐀 fb҇ 𝐕ιɖє๏ ๏ɼ ɼєєℓ 𝐔ɼℓ..*');
+      return reply('*Please Provide A FB Video URL..*');
     }
 
     const { thumb, title, desc, sd } = response.data.result;
@@ -30,7 +31,7 @@ cmd({
     // Send the video as an attachment
     await conn.sendMessage(from, {
       video: { url: sd }, // Attach the video
-      caption: `*❒ FB VIDEO DL❒*\n\n🔖 *Title*: ${title}\n📑 *Description*: ${desc}\n🖇️ *Url*: ${fbUrl}`,
+      caption: `*🌟 𝐅𝐁 𝐕𝐈𝐃𝐄𝐎 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 📥*\n\n🔖 𝐓𝐈𝐓𝐋𝐄: ${title}\n📑 𝐃𝐄𝐒𝐂𝐑𝐈𝐏𝐓𝐈𝐎𝐍: ${desc}\n🖇️ 𝐔𝐑𝐋: ${fbUrl}\n\n\n> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃`,
     });
   } catch (error) {
     console.error('Error downloading Facebook video:', error);
