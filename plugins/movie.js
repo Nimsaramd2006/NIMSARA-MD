@@ -27,30 +27,44 @@ cmd({
         }
 
         const movieInfo = `
-*🎬 Botname MOVIE SERCH🎬*
+◈==================================◈
+╭──────────────────╮
+┃🏷️ 𝐓𝐢𝐭𝐥𝐞: ${data.title}
+┃
+┃📅 𝐘𝐄𝐀𝐑: ${data.Year}
+┃
+┃🌟 𝐑𝐀𝐓𝐄𝐃: ${data.Rated}
+┃
+┃📆 𝐑𝐄𝐋𝐄𝐀𝐒𝐄𝐃: ${data.Released}
+┃
+┃⏳ 𝐑𝐔𝐍𝐓𝐈𝐌𝐄: ${data.Runtime}
+┃
+┃💾 𝐆𝐄𝐍𝐄𝐑: ${data.Genre}
+┃
+┃🎬 𝐃𝐈𝐑𝐄𝐂𝐓𝐈𝐎𝐍: ${data.Director}
+┃
+┃🖊️ 𝐖𝐑𝐈𝐓𝐄𝐑: ${data.Writer}
+┃
+┃🧑🏻 𝐀𝐂𝐓𝐎𝐑𝐒: ${data.Actors}
+┃
+┃🆎 𝐋𝐀𝐍𝐆𝐔𝐀𝐆𝐄: ${data.Language}
+┃
+┃🌏 𝐂𝐎𝐔𝐍𝐓𝐑𝐘: ${data.Country}
+┃
+┃🪩 𝐀𝐖𝐀𝐑𝐃𝐒: ${data.Awards}
+┃
+┃💎 𝐈𝐌𝐃𝐁 𝐑𝐀𝐓𝐓𝐈𝐍𝐆: ${data.imdbRating}
+╰─────────────────────╯
+◈==================================◈
 
-*ᴛɪᴛʟᴇ:* ${data.Title}
-*ʏᴇᴀʀ:* ${data.Year}
-*ʀᴀᴛᴇᴅ:* ${data.Rated}
-*ʀᴇʟᴇᴀꜱᴇᴅ:* ${data.Released}
-*ʀᴜɴᴛɪᴍᴇ:* ${data.Runtime}
-*ɢᴇɴʀᴇ:* ${data.Genre}
-*ᴅɪʀᴇᴄᴛᴏʀ:* ${data.Director}
-*ᴡʀɪᴛᴇʀ:* ${data.Writer}
-*ᴀᴄᴛᴏʀꜱ:* ${data.Actors}
-*ʟᴀɴɢᴜᴀɢᴇ:* ${data.Language}
-*ᴄᴏᴜɴᴛʀʏ:* ${data.Country}
-*ᴀᴡᴀʀᴅꜱ:* ${data.Awards}
-*ɪᴍᴅʙ ʀᴀᴛɪɴɢ:* ${data.imdbRating}
-
-> *powered by ur botname👑*
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃
 `;
 
         const imageUrl = data.Poster && data.Poster !== 'N/A' ? data.Poster : config.ALIVE_IMG;
 
         await conn.sendMessage(from, {
             image: { url: imageUrl },
-            caption: `${movieInfo}\n> CREATED BY your  name`
+            caption: `${movieInfo}\n> 𝐂𝐑𝐄𝐀𝐓𝐄𝐃 𝐁𝐘 𝐑.𝐑𝐀𝐉𝐈𝐍𝐃𝐔 𝐍𝐈𝐌𝐒𝐀𝐑𝐀`
         }, { quoted: mek });
     } catch (e) {
         console.error(e);
