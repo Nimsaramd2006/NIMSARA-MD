@@ -8,7 +8,7 @@ const fetch = require('node-fetch');
 cmd({
   pattern: "ytmp3",
   category: "downloader",
-  react: "🎥",
+  react: "🎵",
   desc: "Download YouTube audios as MP3",
   filename: __filename
 },
@@ -24,17 +24,28 @@ async(conn, mek, m, {from, quoted, body, isCmd, command, args, q, isGroup, sende
 
         const audio = data.data;
         const message = `
+
 🎶 𝐘𝐓 𝐒𝐎𝐍𝐆 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 📥
 
-╭━━━━━━━━━●●►
-┢❑ 𝐓𝐢𝐭𝐥𝐞: ${audio.title}
-┢❑ 𝐅𝐨𝐫𝐦𝐚𝐭: ${audio.format}
-┢❑ 𝐓𝐢𝐦𝐞: ${audio.timestump || 'N/A'}
-┢❑ 𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐝: ${audio.ago || 'N/A'}
-┢❑ 𝐕𝐢𝐞𝐰𝐬: ${audio.views || 'N/A'}
-┢❑ 𝐋𝐢𝐤𝐞𝐬: ${audio.likes || 'N/A'}
-╰━━━━━━━━●●►
-        `;
+◈==================================◈
+╭──────────────────╮
+┃🎵 𝐓𝐢𝐭𝐥𝐞: ${audio.title}
+┃
+┃🎧 𝐅𝐨𝐫𝐦𝐚𝐭: ${audio.format} 
+┃
+┃⏱️ 𝐓𝐢𝐦𝐞: ${audio.timestump || 'N/A'}
+┃    
+┃⏰ 𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐝: ${audio.ago || 'N/A'}
+┃    
+┃📊 𝐕𝐢𝐞𝐰𝐬: ${audio.views || 'N/A'}
+┃
+┃👍𝐋𝐢𝐤𝐞𝐬: ${audio.likes || 'N/A'}
+╰─────────────────╯
+
+⦁⦂⦁*━┉━┉━┉━┉━━┉━┉━┉━┉━┉━┉━┉━┉━┉┉┉━⦁⦂⦁
+
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃
+`;
 
        
         await conn.sendMessage(from, {
@@ -54,6 +65,6 @@ async(conn, mek, m, {from, quoted, body, isCmd, command, args, q, isGroup, sende
         });
     } catch (e) {
         console.error(e);
-        await reply(`📕 An error occurred: ${e.message}`);
+        await reply(`🚫 An error occurred: ${e.message}`);
     }
 });
