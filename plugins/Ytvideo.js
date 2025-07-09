@@ -25,7 +25,7 @@ cmd(
       const url = data.url;
 
       // Video metadata description
-      let desc = 🌟 NIMSARA-MD VIDEO DOWNLOADER 🌟
+      let desc = `🌟 NIMSARA-MD VIDEO DOWNLOADER 🌟
 
 ◈==================================◈
 ╭──────────────────╮
@@ -46,7 +46,7 @@ cmd(
 
 
 > ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃
-;
+`;
 
       // Send metadata and thumbnail message
       await robin.sendMessage(
