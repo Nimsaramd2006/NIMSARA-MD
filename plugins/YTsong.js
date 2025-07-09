@@ -49,7 +49,7 @@ cmd(
 
       // Song metadata description
       let desc = `
-🌟 *`NIMSARA-MD SONG DOWNLOADER`* 🌟
+🌟 *NIMSARA-MD SONG DOWNLOADER* 🌟
 
 ◈==================================◈
 ╭──────────────────╮
