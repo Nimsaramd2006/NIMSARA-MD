@@ -10,7 +10,7 @@ cmd({
     pattern: "owner",
     desc: "owner the bot",
     category: "owner",
-    react: "👨‍💻",
+    react: "🧑🏻‍💻",
     filename: __filename
 },
 
@@ -18,17 +18,20 @@ async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender
 try{
 
 let dec = `*👋 Hello ${pushname}*
+╔══════════════════╗
+║  𝐎𝐖𝐍𝐄𝐑 𝐃𝐄𝐓𝐀𝐋𝐒 ║ 
+╚══════════════════╝ 
 
-*👨‍💻Your Botname 👨‍💻*
+🧑🏻‍💻 𝐎𝐖𝐍𝐄𝐑 𝐍𝐀𝐌𝐄 : 𝐑.𝐑𝐀𝐉𝐈𝐍𝐃𝐔 𝐍𝐈𝐌𝐒𝐀𝐑𝐀
+☎️ 𝐎𝐖𝐍𝐄𝐑 𝐍𝐔𝐌𝐁𝐄𝐑 : +94766351670
+😒 𝐅𝐑𝐄𝐄 𝐁𝐎𝐓 𝐔𝐒𝐄 : +94766351670
 
-> *𝗢𝗪𝗡𝗘𝗥 𝗜𝗡𝗙𝗢* 
 
-*⚡Owner name -: your name*
-*⚡Number* -: your number
+𝐉𝐎𝐈𝐍 𝐍𝐎𝐖 !
 
- ⚡️◦ https://whatsapp.com/channel/0029Vac8SosLY6d7CAFndv3
+*https://chat.whatsapp.com/JX7gtZYtbHn9C1V1k9ydCK*
 
-> *Powered by your name*
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃
 `;
 await conn.sendMessage(from,{image:{url:config.MENU_IMG},caption:dec},{quoted:mek});
 
@@ -49,16 +52,14 @@ cmd({
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
 
-let dec = `*📍ℝ𝔼ℙ𝕆-𝕃𝕀ℕ𝕂 ❤️‍🔥👇*
-
-👨‍💻◦https://github.com/your github username/Botname
+let dec = `𝐍𝐎𝐓 𝐑𝐄𝐏𝐎 𝐋𝐈𝐍𝐊
 
 
-*📍ℙ𝕃𝔼𝔸𝕊𝔼 𝔽𝕆𝕃𝕃𝕆𝕎 𝕄𝕐 𝕎ℍ𝔸𝕋𝕊𝔸ℙℙ ℂℍ𝔸ℕℕ𝔼𝕃 ❤️‍🔥👇*
+📍𝐏𝐋𝐄𝐀𝐒𝐄 𝐉𝐎𝐈𝐍 𝐌𝐘 𝐆𝐑𝐎𝐔𝐏 ❤️‍🔥👇
 
-👨‍💻◦ https://whatsapp.com/channel/0029Vac8SosLY6d7CAFndv3Z
+👨‍💻◦ *https://chat.whatsapp.com/JX7gtZYtbHn9C1V1k9ydCK*
 
-> *Powered by yourname*
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃
 `;
 await conn.sendMessage(from,{image:{url: config.MENU_IMG},caption:dec},{quoted:mek});
 
@@ -71,20 +72,21 @@ cmd({
     pattern: "system",
     alias: ["status","botinfo"],
     desc: "Check up time , ram usage and more",
+    react: "🛡️",
     category: "owner",
     filename: __filename
 },
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
 let status = `┌───────────────────────
-├ ⏰ *Runtime:-* ${runtime(process.uptime())}
-├ 📟 *Ram usage:-* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
-├ ⚙️ *Platform:-* ${os.hostname()}
-├ 👨‍💻 *Owners:-* your name
-├ 🧬 *Version:-* 1.0.0
+├ ⏰ 𝐑𝐮𝐧𝐭𝐢𝐦𝐞:- ${runtime(process.uptime())}
+├ 📟 𝐑𝐚𝐦 𝐮𝐬𝐚𝐠𝐞:- ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
+├ ⚙️ 𝐏𝐥𝐚𝐭𝐟𝐨𝐫𝐦:- ${os.hostname()}
+├ 👨‍💻 𝐎𝐰𝐧𝐞𝐫𝐬:- R>RAJINDU NIMSARA
+├ 🧬 𝐕𝐞𝐫𝐬𝐢𝐨𝐧:- 1.0.5
 └───────────────────────
 
-> *𝘗𝘖𝘞𝘌𝘙𝘌𝘋 𝘣𝘺 Your Botname*
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃
 `;
 return reply(`${status}`)
   
@@ -114,7 +116,7 @@ cmd({
     pattern: "jid",
     desc: "Get the JID of the chat.",
     category: "owner",
-   // react: "🔍",
+    react: "🔍",
     filename: __filename
 }, async (conn, mek, m, { from, reply }) => {
     try {
