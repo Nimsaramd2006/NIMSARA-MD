@@ -26,6 +26,7 @@ cmd({
   pattern: "twitter",
   alias: ["tweet", "twdl"],
   desc: "Download Twitter videos",
+  react: "⬇️",
   category: "download",
   filename: __filename
 }, async (conn, m, store, {
@@ -52,17 +53,18 @@ cmd({
 
     const { desc, thumb, video_sd, video_hd } = data.result;
 
-    const caption = `╭════ 〔 *Your Botname* 〕════❐\n`
-      + `┃▸ *Description:* ${desc || "No description"}\n`
-      + `╰═════════════════❐\n\n`
-      + `📹 *Download Options:*\n`
-      + `1️⃣  *SD Quality*\n`
-      + `2️⃣  *HD Quality*\n`
-      + `🎵 *Audio Options:*\n`
-      + `3️⃣  *Audio*\n`
-      + `4️⃣  *Document*\n`
-      + `5️⃣  *Voice*\n\n`
-      + `📌 *Reply with the number to download your choice.*`;
+    const caption = `🎥 𝐓𝐖𝐈𝐓𝐓𝐄𝐑 𝐕𝐈𝐃𝐄𝐎 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 📥\n\n`
+      + `╭──────────────────╮\n`
+      + `┃📜 𝐃𝐄𝐒𝐂𝐑𝐈𝐏𝐓𝐈𝐎𝐍: ${desc || "No description"}\n`
+      + `╰──────────────────╯\n\n`
+      + `⬇️ 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 𝐎𝐏𝐓𝐈𝐎𝐍\n\n`
+      + `1️⃣ 𝐒𝐃 𝐐𝐔𝐀𝐋𝐈𝐓𝐘\n`
+      + `2️⃣ 𝐇𝐃 𝐐𝐔𝐀𝐋𝐈𝐓𝐘\n\n`
+      + `🎵 𝐀𝐔𝐃𝐈𝐎 𝐎𝐏𝐓𝐈𝐎𝐍\n\n`
+      + `3️⃣ 𝐀𝐔𝐃𝐈𝐎\n`
+      + `4️⃣ 𝐃𝐎𝐂𝐔𝐌𝐄𝐍𝐓\n`
+      + `5️⃣ 𝐕𝐎𝐈𝐂𝐄\n\n`
+      + `📌 *Reply The Number You Want To Select*`;
 
     const sentMsg = await conn.sendMessage(from, {
       image: { url: thumb },
@@ -88,14 +90,14 @@ cmd({
           case "1":
             await conn.sendMessage(senderID, {
               video: { url: video_sd },
-              caption: "📥 *Downloaded in SD Quality*"
+              caption: "📥 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐈𝐍 𝐒𝐃 𝐐𝐔𝐀𝐋𝐈𝐓𝐘"
             }, { quoted: receivedMsg });
             break;
 
           case "2":
             await conn.sendMessage(senderID, {
               video: { url: video_hd },
-              caption: "📥 *Downloaded in HD Quality*"
+              caption: "📥 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐈𝐍 𝐇𝐃 𝐐𝐔𝐀𝐋𝐈𝐓𝐘"
             }, { quoted: receivedMsg });
             break;
 
@@ -111,7 +113,7 @@ cmd({
               document: { url: video_sd },
               mimetype: "audio/mpeg",
               fileName: "Twitter_Audio.mp3",
-              caption: "📥 *Audio Downloaded as Document*"
+              caption: "📥 𝐀𝐔𝐃𝐈𝐎 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐃 𝐀𝐒 𝐃𝐎𝐂𝐔𝐌𝐄𝐍𝐓"
             }, { quoted: receivedMsg });
             break;
 
@@ -141,7 +143,7 @@ cmd({
   pattern: "mediafire",
   alias: ["mfire"],
   desc: "To download MediaFire files.",
-  react: "🎥",
+  react: "⬇️",
   category: "download",
   filename: __filename
 }, async (conn, m, store, {
@@ -174,11 +176,12 @@ cmd({
       react: { text: "⬆️", key: m.key }
     });
 
-    const caption = `╭════ 〔 *Your Botname* 〕════❐\n`
-      + `┃▢ *ғɪʟᴇ ɴᴀᴍᴇ:* ${file_name}\n`
-      + `┃▢ *ғɪʟᴇ ᴛʏᴘᴇ:* ${mime_type}\n`
-      + `╰═════════════════❐\n\n`
-      + `> *Powered by Your Botname🎐*`;
+    const caption = `🌟 𝐌𝐄𝐃𝐈𝐀 𝐅𝐈𝐑𝐄 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 📥\n`
+      + `╭──────────────────╮`
+      + `┃📄 𝐅𝐈𝐋𝐄 𝐍𝐀𝐌𝐄: ${file_name}\n`
+      + `┃📨 𝐅𝐈𝐋𝐄 𝐓𝐘𝐏𝐄: ${mime_type}\n`
+      + `╰──────────────────╯\n\n`
+      + `> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃`;
 
     await conn.sendMessage(from, {
       document: { url: dl_link },
@@ -198,6 +201,7 @@ cmd({
 cmd({
   pattern: "apk",
   desc: "Download APK from Aptoide.",
+  react: "⬇️",
   category: "download",
   filename: __filename
 }, async (conn, m, store, {
@@ -224,14 +228,17 @@ cmd({
     const app = data.datalist.list[0];
     const appSize = (app.size / 1048576).toFixed(2); // Convert bytes to MB
 
-    const caption = `╭═══ 〔 *Your Botname 𝐀𝐏𝐊* 〕═══❐
-┃ 🏷️ *ɴᴀᴍᴇ:* ${app.name}
-┃ 📦 *sɪᴢᴇ:* ${appSize} MB
-┃ 📮 *ᴘᴀᴄᴋᴀɢᴇ:* ${app.package}
-┃ 📅 *ᴜᴘᴅᴀᴛᴇᴅ ᴏɴ:* ${app.updated}
-┃ 👨🏻‍💻 *ᴅᴇᴠᴇʟᴏᴘᴇʀ:* ${app.developer.name}
-╰══════════════════❐
-> *Powered by your botname🎐*`;
+    const caption = `🗳️ 𝐀𝐏𝐊 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 📥
+    
+╭──────────────────╮    
+┃ 🏷️ 𝐍𝐀𝐌𝐄: ${app.name}
+┃ 📦 𝐒𝐈𝐙𝐄: ${appSize} MB
+┃ 📮 𝐏𝐀𝐂𝐊𝐀𝐆𝐄: ${app.package}
+┃ 📅 𝐔𝐏𝐃𝐀𝐓𝐄𝐃 𝐎𝐍: ${app.updated}
+┃ 👨🏻‍💻 𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑: ${app.developer.name}
+╰──────────────────╯
+
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃`;
 
     await conn.sendMessage(from, { react: { text: "⬆️", key: m.key } });
 
@@ -255,7 +262,7 @@ cmd({
 cmd({
   pattern: "gdrive",
   desc: "Download Google Drive files.",
-  react: "🌐",
+  react: "⬇️",
   category: "download",
   filename: __filename
 }, async (conn, m, store, {
