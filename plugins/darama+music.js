@@ -30,35 +30,21 @@ const data = search.videos[0];
 const url = data.url
     
     
-let desc = `
-*⦁ MUSⵊC DOWNLOADⵊNG ⦁*
+let desc = ` 
 
-🎵 *MUSⵊC FOUND!* 
-
-➥ *Title:* ${data.title} 
-➥ *Duration:* ${data.timestamp} 
-➥ *Views:* ${data.views} 
-➥ *Uploaded On:* ${data.ago} 
-➥ *Link:* ${data.url} 
-
-🎧 *ENJOY THE MUSIC BROUGHT TO YOU!*
-
-
-> *© Powered by your botname* 
-
-🌟 *NIMSARA-MD SONG DOWNLOADER* 🌟
+🎶 𝐒𝐎𝐍𝐆 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 📥
 
 ◈==================================◈
 ╭──────────────────╮
-┃🎵 *title* : ${data.title}
+┃🎵 𝐓𝐢𝐭𝐥𝐞: ${data.title}
 ┃    
-┃⏱️ *time* : ${data.timestamp}
+┃⏱️ 𝐓𝐢𝐦𝐞: ${data.timestump}
 ┃    
-┃⏰ *ago* : ${data.ago}
+┃⏰ 𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐝: ${data.ago}
 ┃    
-┃📊 *views* : ${data.views}
+┃📊 𝐕𝐢𝐞𝐰𝐬: ${data.views}
 ┃
-┃🔗 *url* : ${data.url}
+┃👍𝐋𝐢𝐤𝐞𝐬: ${data.likes}
 ╰─────────────────╯
 
 ⦁⦂⦁*━┉━┉━┉━┉━━┉━┉━┉━┉━┉━┉━┉━┉━┉┉┉━⦁⦂⦁
@@ -103,20 +89,26 @@ const url = data.url
     
     
 let desc = `
-* ⦁ VⵊDEO DOWNLOADⵊNG ⦁ *
 
-🎥 *VⵊDEO FOUND!* 
+🎶 𝐕𝐈𝐃𝐄𝐎 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 📥
 
-➥ *Title:* ${data.title} 
-➥ *Duration:* ${data.timestamp} 
-➥ *Views:* ${data.views} 
-➥ *Uploaded On:* ${data.ago} 
-➥ *Link:* ${data.url} 
+◈==================================◈
+╭──────────────────╮
+┃🎵 𝐓𝐢𝐭𝐥𝐞: ${data.title}
+┃    
+┃⏱️ 𝐓𝐢𝐦𝐞: ${data.timestump}
+┃    
+┃⏰ 𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐝: ${data.ago}
+┃    
+┃📊 𝐕𝐢𝐞𝐰𝐬: ${data.views}
+┃
+┃👍𝐋𝐢𝐤𝐞𝐬: ${data.likes}
+╰─────────────────╯
 
-🎬 *ENJOY THE VIDEO BROUGHT TO YOU!*
+⦁⦂⦁*━┉━┉━┉━┉━━┉━┉━┉━┉━┉━┉━┉━┉━┉┉┉━⦁⦂⦁
 
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃
 
-> *© powered by your botname*
 `
 
 await conn.sendMessage(from,{image:{url: data.thumbnail},caption:desc},{quoted:mek});
