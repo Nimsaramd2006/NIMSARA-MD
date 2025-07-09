@@ -37,27 +37,10 @@ async (conn, mek, m, { from, args, q, reply }) => {
         const { title, like, comment, share, author, meta } = data.data;
         const videoUrl = meta.media.find(v => v.type === "video").org;
         
-        const caption = `*❒ Your Botname VⵊDEO DOWNLOADER ❒*\n\n` +
-                        `👤 *User:* ${author.nickname}\n` +
-                        `♥️ *Likes:* ${like}\n💬 *Comments:* ${comment}\n♻️ *Shares:* ${share}`
-         
-         
-🎶 𝐘𝐓 𝐒𝐎𝐍𝐆 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 📥
-
-◈==================================◈
-╭──────────────────╮
-┃🎵 𝐓𝐢𝐭𝐥𝐞: ${audio.title}
-┃
-┃🎧 𝐅𝐨𝐫𝐦𝐚𝐭: ${audio.format} 
-┃
-┃⏱️ 𝐓𝐢𝐦𝐞: ${audio.timestump || 'N/A'}
-┃    
-┃⏰ 𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐝: ${audio.ago || 'N/A'}
-┃    
-┃📊 𝐕𝐢𝐞𝐰𝐬: ${audio.views || 'N/A'}
-┃
-┃👍𝐋𝐢𝐤𝐞𝐬: ${audio.likes || 'N/A'}
-╰─────────────────╯;
+        const caption = `◈==================================◈\n\n` + 
+                        `🎥 𝐓𝐈𝐊𝐓𝐎𝐊 𝐕𝐈𝐃𝐄𝐎 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 📥\n\n` +
+                        `👤 𝐔𝐒𝐄𝐑: ${author.nickname}\n` +
+                        `♥️ 𝐋𝐢𝐤𝐞𝐬: ${like}\n💬 𝐂𝐎𝐌𝐌𝐄𝐍𝐓𝐒: ${comment}\n♻️ 𝐒𝐇𝐀𝐑𝐄𝐒: ${share}\n\n⦁⦂⦁*━┉━┉━┉━┉━━┉━┉━┉━┉━┉━┉━┉━┉━┉┉┉━⦁⦂⦁\n\n> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃`;
         
         await conn.sendMessage(from, {
             video: { url: videoUrl },
