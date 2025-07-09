@@ -4,7 +4,7 @@ const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, 
 
 cmd({
     pattern: "join",
-    react: "📬",
+    react: "👥",
     alias: ["joinme","f_join"],
     desc: "To Join a Group from Invite link",
     category: "group",
@@ -16,10 +16,10 @@ try{
 const msr = (await fetchJson('https://raw.githubusercontent.com/kingmalvn/KING-DATA/refs/heads/main/MSG/mreply.json')).replyMsg
 
 if (!isCreator && !isDev && !isOwner && !isMe) return reply(msr.own_cmd)
-if (!q) return reply("*Please write the Group Link 🖇️*")
+if (!q) return reply("𝐏𝐋𝐄𝐒𝐄 𝐖𝐑𝐈𝐓𝐄 𝐓𝐇𝐄 𝐆𝐑𝐎𝐔𝐏 𝐋𝐈𝐍𝐊 ⛓️‍💥*")
  let result = args[0].split('https://chat.whatsapp.com/')[1]
  await conn.groupAcceptInvite(result)
-     await conn.sendMessage(from , { text: `*Successfully Joined ✅*`}, { quoted: mek } )
+     await conn.sendMessage(from , { text: `𝐒𝐔𝐂𝐂𝐄𝐒𝐒𝐅𝐔𝐋𝐋𝐘 𝐉𝐎𝐈𝐍𝐄𝐃 ✅`}, { quoted: mek } )
 } catch (e) {
 await conn.sendMessage(from, { react: { text: '❌', key: mek.key } })
 console.log(e)
@@ -30,7 +30,7 @@ reply(`❌ *Error Accurated !!*\n\n${e}`)
 
 cmd({
     pattern: "invite",
-    react: "🖇️",
+    react: "⛓️‍💥",
     alias: ["grouplink","glink"],
     desc: "To Get the Group Invite link",
     category: "group",
@@ -46,7 +46,7 @@ if (!isAdmins) { if (!isDev) return reply(msr.you_adm),{quoted:mek }}
 if (!isBotAdmins) return reply(msr.give_adm)
 const code = await conn.groupInviteCode(from)
 
- await conn.sendMessage(from , { text: `*🖇️ Group Link*\n\nhttps://chat.whatsapp.com/${code}`}, { quoted: mek } )
+ await conn.sendMessage(from , { text: `⛓️‍💥 𝐆𝐑𝐎𝐔𝐏 𝐋𝐈𝐍𝐊\n\nhttps://chat.whatsapp.com/${code}`}, { quoted: mek } )
 } catch (e) {
 await conn.sendMessage(from, { react: { text: '❌', key: mek.key } })
 console.log(e)
