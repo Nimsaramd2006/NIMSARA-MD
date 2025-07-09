@@ -20,7 +20,7 @@ cmd({
     alias: ["ttdl", "tt", "tiktokdl"],
     desc: "Download TikTok video without watermark",
     category: "downloader",
-    react: "⌛",
+    react: "⬇️",
     filename: __filename
 },
 async (conn, mek, m, { from, args, q, reply }) => {
@@ -39,7 +39,25 @@ async (conn, mek, m, { from, args, q, reply }) => {
         
         const caption = `*❒ Your Botname VⵊDEO DOWNLOADER ❒*\n\n` +
                         `👤 *User:* ${author.nickname}\n` +
-                        `♥️ *Likes:* ${like}\n💬 *Comments:* ${comment}\n♻️ *Shares:* ${share}`;
+                        `♥️ *Likes:* ${like}\n💬 *Comments:* ${comment}\n♻️ *Shares:* ${share}`
+         
+         
+🎶 𝐘𝐓 𝐒𝐎𝐍𝐆 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 📥
+
+◈==================================◈
+╭──────────────────╮
+┃🎵 𝐓𝐢𝐭𝐥𝐞: ${audio.title}
+┃
+┃🎧 𝐅𝐨𝐫𝐦𝐚𝐭: ${audio.format} 
+┃
+┃⏱️ 𝐓𝐢𝐦𝐞: ${audio.timestump || 'N/A'}
+┃    
+┃⏰ 𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐝: ${audio.ago || 'N/A'}
+┃    
+┃📊 𝐕𝐢𝐞𝐰𝐬: ${audio.views || 'N/A'}
+┃
+┃👍𝐋𝐢𝐤𝐞𝐬: ${audio.likes || 'N/A'}
+╰─────────────────╯;
         
         await conn.sendMessage(from, {
             video: { url: videoUrl },
