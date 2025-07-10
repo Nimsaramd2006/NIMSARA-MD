@@ -21,7 +21,7 @@ cmd({
 
 async(conn, mek, m,{from, l, quoted, body, isCmd, umarmd, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-if (!q) return reply('*Please give me words to search*')
+if (!q) return reply('𝐏𝐥𝐞𝐚𝐬𝐞 𝐠𝐢𝐯𝐞 𝐦𝐞 𝐰𝐨𝐫𝐝𝐬 𝐭𝐨 𝐬𝐞𝐚𝐫𝐜𝐡')
 try {
 let yts = require("yt-search")
 var arama = await yts(q);
