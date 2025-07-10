@@ -62,7 +62,7 @@ const port = process.env.PORT || 9090;
 
 
 async function connectToWA() {
-console.log("CONNECTING LITE-MD 🧬...");
+console.log("𝐂𝐎𝐍𝐍𝐄𝐂𝐓𝐈𝐍𝐆 𝐍𝐈𝐌𝐒𝐀𝐑𝐀-𝐌𝐃 🧬...");
 const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/sessions/')
 var { version } = await fetchLatestBaileysVersion()
 
@@ -90,14 +90,14 @@ require("./plugins/" + plugin);
 }
 });
 console.log('PLUGINS FILES INSTALL SUCCESSFULLY ✅')
-console.log('LITE-MD CONNECTED TO WHATSAPP ENJOY ✅')
+console.log('𝐍𝐈𝐌𝐒𝐀𝐑𝐀-𝐌𝐃 𝐂𝐎𝐍𝐍𝐄𝐂𝐓𝐄𝐃 𝐓𝐎 𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐄𝐍𝐉𝐎𝐘 ✅')
 
 let up = `*╭──────────────●●►*
-> *➺ LITE-MD ᴄᴏɴɴᴇᴄᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʏ ᴛʏᴘᴇ .ᴍᴇɴᴜ ᴛᴏ ᴄᴏᴍᴍᴀɴᴅ ʟɪsᴛ ᴄʀᴇᴀᴛᴇᴅ ʙʏ your name ✅*
+> *➺ 𝐍𝐈𝐌𝐒𝐀𝐑𝐀-𝐌𝐃 𝐂𝐨𝐧𝐧𝐞𝐜𝐭𝐞𝐝 𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐲 
 
-> *❁ᴊᴏɪɴ ᴏᴜʀ ᴡʜᴀᴛsᴀᴘᴘ ᴄʜᴀɴɴᴇʟ ғᴏʀ ᴜᴘᴅᴀᴛᴇs 
+> *❁FREE BOT USE, JOIN MY WHATSAPP GROUP*
 
-*https://whatsapp.com/channel/0029Vac8SosLY6d7CAFndv3Z*
+*https://chat.whatsapp.com/JX7gtZYtbHn9C1V1k9ydCK*
 
 *YOUR BOT ACTIVE NOW ENJOY♥️🪄*\n\n*PREFIX: ${prefix}*
 
@@ -269,7 +269,7 @@ command.function(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, i
 })
 }
 app.get("/", (req, res) => {
-res.send("HEY, LITE-MD STARTED ✅");
+res.send("HEY, NIMSARA-MD STARTED ✅");
 });
 app.listen(port, () => console.log(`Server listening on port http://localhost:${port}`));
 setTimeout(() => {
