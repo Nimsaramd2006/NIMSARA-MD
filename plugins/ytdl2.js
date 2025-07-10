@@ -29,19 +29,29 @@ cmd({
             return reply("Failed to fetch the video. Please try again later.");
         }
         
-        let ytmsg = `╔═══〔 *𓆩Your BOTNAME ᪳𓆪* 〕═══❒
-║╭───────────────◆  
-║│ *❍ ᴠɪᴅᴇᴏ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ*
-║╰───────────────◆
-╚══════════════════❒
-╔══════════════════❒
-║ ⿻ *ᴛɪᴛʟᴇ:*  ${yts.title}
-║ ⿻ *ᴅᴜʀᴀᴛɪᴏɴ:*  ${yts.timestamp}
-║ ⿻ *ᴠɪᴇᴡs:*  ${yts.views}
-║ ⿻ *ᴀᴜᴛʜᴏʀ:*  ${yts.author.name}
-║ ⿻ *ʟɪɴᴋ:*  ${yts.url}
-╚══════════════════❒
-> *Powered by yourname*`;
+        let ytmsg = `
+
+🎶 𝐘𝐓 𝐕𝐈𝐃𝐄𝐎 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 📥
+
+◈==================================◈
+╭──────────────────╮
+┃🎵 𝐓𝐢𝐭𝐥𝐞: ${yts.title}
+┃
+┃🎧 𝐅𝐨𝐫𝐦𝐚𝐭: ${yts.format} 
+┃
+┃⏱️ 𝐓𝐢𝐦𝐞: ${yts.timestump}
+┃    
+┃⏰ 𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐝: ${yts.ago || 'N/A'}
+┃    
+┃📊 𝐕𝐢𝐞𝐰𝐬: ${yts.views}
+┃
+┃👍𝐋𝐢𝐤𝐞𝐬: ${yts.likes || 'N/A'}
+╰─────────────────╯
+
+⦁⦂⦁*━┉━┉━┉━┉━━┉━┉━┉━┉━┉━┉━┉━┉━┉┉┉━⦁⦂⦁
+
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃
+`;
 
         // Send video details
         await conn.sendMessage(from, { image: { url: data.result.thumbnail || '' }, caption: ytmsg }, { quoted: mek });
@@ -54,7 +64,7 @@ cmd({
             document: { url: data.result.download_url }, 
             mimetype: "video/mp4", 
             fileName: `${data.result.title}.mp4`, 
-            caption: `*${yts.title}*\n> *© Powered by your name 🎐*`
+            caption: `*${yts.title}*\n\n> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃`
         }, { quoted: mek });
 
     } catch (e) {
@@ -90,19 +100,29 @@ const yt = await ytsearch(q);
         return reply("Failed to fetch the audio. Please try again later.");
     }
     
-    let ytmsg = `╔═══〔 *𓆩Your Botname𓆪* 〕═══❒
-║╭───────────────◆  
-║│ **❍ auᴅᴇᴏ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ**
-║╰───────────────◆
-╚══════════════════❒
-╔══════════════════❒
-║ ⿻ *ᴛɪᴛʟᴇ:*  ${yts.title}
-║ ⿻ *ᴅᴜʀᴀᴛɪᴏɴ:*  ${yts.timestamp}
-║ ⿻ *ᴠɪᴇᴡs:*  ${yts.views}
-║ ⿻ *ᴀᴜᴛʜᴏʀ:*  ${yts.author.name}
-║ ⿻ *ʟɪɴᴋ:*  ${yts.url}
-╚══════════════════❒
-Powered by your name 🍉*`;
+    let ytmsg = `
+
+🎶 𝐘𝐓 𝐀𝐔𝐃𝐈𝐎 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 📥
+
+◈==================================◈
+╭──────────────────╮
+┃🎵 𝐓𝐢𝐭𝐥𝐞: ${yts.title}
+┃
+┃🎧 𝐅𝐨𝐫𝐦𝐚𝐭: ${yts.format} 
+┃
+┃⏱️ 𝐓𝐢𝐦𝐞: ${yts.timestump}
+┃    
+┃⏰ 𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐝: ${yts.ago || 'N/A'}
+┃    
+┃📊 𝐕𝐢𝐞𝐰𝐬: ${yts.views}
+┃
+┃👍𝐋𝐢𝐤𝐞𝐬: ${yts.likes || 'N/A'}
+╰─────────────────╯
+
+⦁⦂⦁*━┉━┉━┉━┉━━┉━┉━┉━┉━┉━┉━┉━┉━┉┉┉━⦁⦂⦁
+
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃
+`;
 
 
 
@@ -117,7 +137,7 @@ Powered by your name 🍉*`;
         document: { url: data.result.downloadUrl }, 
         mimetype: "audio/mpeg", 
         fileName: `${data.result.title}.mp3`, 
-        caption: `> *© Powered by your name 🎐*`
+        caption: `> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃`
     }, { quoted: mek });
 
 } catch (e) {
