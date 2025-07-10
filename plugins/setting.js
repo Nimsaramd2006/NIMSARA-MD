@@ -5,7 +5,7 @@ const config = require('../config');
 
 cmd({
     pattern: "settings",
-    react: "🎛️",
+    react: "⚙️",
     alias: ["setting", "env"],
     desc: "Get bot's settings list.",
     category: "main",
@@ -41,26 +41,26 @@ cmd({
         };
 
         // Create the settings message with the updated format
-        let madeSetting = `╭───⚙️ *${config.BOT_NAME} Settings* ⚙️───╮
+        let madeSetting = `╭───⚙️ ${config.BOT_NAME} 𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒 ⚙️───╮
 │
-│ 🟢 *➤ Auto Read Status*: ${statusIcon(config.AUTO_READ_STATUS)}
-│ ⚙️ *➤ Mode*: *${config.MODE}*
-│ 🎙️ *➤ Auto Voice*: ${statusIcon(config.AUTO_VOICE)}
-│ 🖼️ *➤ Auto Sticker*: ${statusIcon(config.AUTO_STICKER)}
-│ 💬 *➤ Auto Reply*: ${statusIcon(config.AUTO_REPLY)}
-│ ✉️ *➤ Alive Message*: *${config.ALIVE_MSG}*
-│ 🔗 *➤ Anti Link*: ${statusIcon(config.ANTI_LINK)}
-│ 🚫 *➤ Anti Bad*: ${statusIcon(config.ANTI_BAD)}
-│ ⌨️ *➤ Prefix*: *[ ${config.PREFIX} ]*
-│ 🎥 *➤ Fake Recording*: ${statusIcon(config.FAKE_RECORDING)}
-│ 😀 *➤ Auto React*: ${statusIcon(config.AUTO_REACT)}
-│ ❤️ *➤ Heart React*: ${statusIcon(config.HEART_REACT)}
-│ 👑 *➤ Owner React*: ${statusIcon(config.OWNER_REACT)}
-│ 🤖 *➤ Bot Name*: *${config.BOT_NAME}*
+│ 🟢 ➤ 𝐀𝐔𝐓𝐎 𝐑𝐄𝐀𝐃 𝐒𝐓𝐀𝐓𝐔𝐒: ${statusIcon(config.AUTO_READ_STATUS)}
+│ ⚙️ ➤ 𝐌𝐎𝐃𝐄: *${config.MODE}*
+│ 🎙️ ➤ 𝐀𝐔𝐓𝐎 𝐕𝐎𝐈𝐂𝐄: ${statusIcon(config.AUTO_VOICE)}
+│ 🖼️ ➤ 𝐀𝐔𝐓𝐎 𝐒𝐓𝐈𝐂𝐊𝐄𝐑: ${statusIcon(config.AUTO_STICKER)}
+│ 💬 ➤ 𝐀𝐔𝐓𝐎 𝐑𝐄𝐏𝐋𝐘: ${statusIcon(config.AUTO_REPLY)}
+│ ✉️ ➤ 𝐀𝐋𝐈𝐕𝐄 𝐌𝐒𝐆: *${config.ALIVE_MSG}*
+│ 🔗 ➤ 𝐀𝐍𝐓𝐈 𝐋𝐈𝐍𝐊: ${statusIcon(config.ANTI_LINK)}
+│ 🚫 ➤ 𝐀𝐍𝐓𝐈 𝐁𝐀𝐃: ${statusIcon(config.ANTI_BAD)}
+│ ⌨️ ➤ 𝐏𝐑𝐄𝐅𝐈𝐗: *[ ${config.PREFIX} ]*
+│ 🎥 ➤ 𝐅𝐀𝐊𝐄 𝐑𝐄𝐂𝐎𝐑𝐃𝐈𝐍𝐆: ${statusIcon(config.FAKE_RECORDING)}
+│ 😀 ➤ 𝐀𝐔𝐓𝐎 𝐑𝐄𝐀𝐂𝐓: ${statusIcon(config.AUTO_REACT)}
+│ ❤️ ➤ 𝐇𝐄𝐀𝐑𝐓 𝐑𝐄𝐀𝐂𝐓: ${statusIcon(config.HEART_REACT)}
+│ 👑 ➤ 𝐎𝐖𝐍𝐄𝐑 𝐑𝐄𝐀𝐂𝐓: ${statusIcon(config.OWNER_REACT)}
+│ 🤖 ➤ 𝐁𝐎𝐓 𝐍𝐀𝐌𝐄: *${config.BOT_NAME}*
 │
 ╰──────────────────────────╯
 
-*🌟DEVELOPED BY Your Name🌟*
+> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃
 `;
 
         // Send the settings message with the updated format
