@@ -21,12 +21,7 @@ cmd({
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
 let menu = {
-main: '',
-download: '',
-group: '',
-owner: '',
 convert: '',
-search: ''
 };
 
 for (let i = 0; i < commands.length; i++) {
@@ -43,8 +38,6 @@ let madeMenu = `
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃 𝐌𝐞𝐧𝐮
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-𝐂𝐫𝐞𝐚𝐭𝐞𝐝 𝐛𝐲 𝐑.𝐑𝐀𝐉𝐈𝐍𝐃𝐔 𝐍𝐈𝐌𝐒𝐀𝐑𝐀👨🏻‍💻
 
 
 ╔══════════════════════════════╗  
@@ -73,7 +66,6 @@ let madeMenu = `
 ╭─━─〔 ⚡ 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒 ⚡ 〕━━╮  
 ┃ ◈ *alive*
 ┃ ◈ *menu**  
-┃ ◈ *menu2* 
 ┃ ◈ *system*  
 ┃ ◈ *ping*  
 ┃ ◈ *runtime*
@@ -140,6 +132,8 @@ ${menu.convert}
 ┃ ◈ *image* 
 ╰─━─━─━━─━─━─━─━─━─╯ 
 
+
+𝐂𝐫𝐞𝐚𝐭𝐞𝐝 𝐛𝐲 𝐑.𝐑𝐀𝐉𝐈𝐍𝐃𝐔 𝐍𝐈𝐌𝐒𝐀𝐑𝐀👨🏻‍💻
 
 > ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃
 
