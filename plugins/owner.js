@@ -98,6 +98,7 @@ reply(`${e}`)
 })
 cmd({
     pattern: "alive",
+    alias: ["bot"],
     desc: "Check bot online or no.",
     react: "👋",
     category: "owner",
