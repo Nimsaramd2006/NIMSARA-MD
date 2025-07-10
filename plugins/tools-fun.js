@@ -276,12 +276,13 @@ cmd({
   pattern: "repeat",
   alias: ["rp", "rpm"],
   desc: "Repeat a message a specified number of times.",
+  react: "🔄",
   category: "fun",
   filename: __filename
 }, async (conn, m, store, { args, reply }) => {
   try {
     if (!args[0]) {
-      return reply("✳️ Use this command like:\n*Example:* .repeat 10,I love you");
+      return reply("✳️ 𝐔𝐬𝐞 𝐭𝐡𝐢𝐬 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 𝐥𝐢𝐤𝐞:\n𝐄𝐱𝐚𝐦𝐩𝐥𝐞: .𝐫𝐞𝐩𝐞𝐚𝐭 𝟏𝟎,𝐈 𝐥𝐨𝐯𝐞 𝐲𝐨𝐮");
     }
 
     const [countStr, ...messageParts] = args.join(" ").split(",");
@@ -289,11 +290,11 @@ cmd({
     const message = messageParts.join(",").trim();
 
     if (isNaN(count) || count <= 0 || count > 300) {
-      return reply("❎ Please specify a valid number between 1 and 300.");
+      return reply("❎ 𝐏𝐥𝐞𝐚𝐬𝐞 𝐬𝐩𝐞𝐜𝐢𝐟𝐲 𝐚 𝐯𝐚𝐥𝐢𝐝 𝐧𝐮𝐦𝐛𝐞𝐫 𝐛𝐞𝐭𝐰𝐞𝐞𝐧 𝟏 𝐚𝐧𝐝 𝟑𝟎𝟎");
     }
 
     if (!message) {
-      return reply("❎ Please provide a message to repeat.");
+      return reply("❎ 𝐏𝐥𝐞𝐚𝐬𝐞 𝐩𝐫𝐨𝐯𝐢𝐝𝐞 𝐚 𝐦𝐞𝐬𝐬𝐚𝐠𝐞 𝐭𝐨 𝐫𝐞𝐩𝐞𝐚𝐭");
     }
 
     const repeatedMessage = Array(count).fill(message).join("\n");
@@ -308,6 +309,7 @@ cmd({
 cmd({
   pattern: "spam",
   desc: "Send a message multiple times, one by one.",
+  react: "☠️",
   category: "fun",
   filename: __filename
 }, async (conn, m, store, { args, reply, senderNumber }) => {
@@ -315,11 +317,11 @@ cmd({
     const botOwner = conn.user.id.split(":")[0]; // Get bot owner's number
 
     if (senderNumber !== botOwner) {
-      return reply("❎ Only the bot owner can use this command.");
+      return reply("❎ 𝐎𝐧𝐥𝐲 𝐭𝐡𝐞 𝐛𝐨𝐭 𝐨𝐰𝐧𝐞𝐫 𝐜𝐚𝐧 𝐮𝐬𝐞 𝐭𝐡𝐢𝐬 𝐜𝐨𝐦𝐦𝐚𝐧𝐝");
     }
 
     if (!args[0]) {
-      return reply("✳️ Use this command like:\n *Example:* .send 10,I love you");
+      return reply("✳️ 𝐔𝐬𝐞 𝐭𝐡𝐢𝐬 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 𝐥𝐢𝐤𝐞:\n 𝐄𝐱𝐚𝐦𝐩𝐥𝐞: .𝐬𝐞𝐧𝐝 𝟏𝟎,𝐈 𝐥𝐨𝐯𝐞 𝐲𝐨𝐮");
     }
 
     const [countStr, ...messageParts] = args.join(" ").split(",");
@@ -327,24 +329,24 @@ cmd({
     const message = messageParts.join(",").trim();
 
     if (isNaN(count) || count <= 0 || count > 100) {
-      return reply("❎ Please specify a valid number between 1 and 100.");
+      return reply("❎ 𝐏𝐥𝐞𝐚𝐬𝐞 𝐬𝐩𝐞𝐜𝐢𝐟𝐲 𝐚 𝐯𝐚𝐥𝐢𝐝 𝐧𝐮𝐦𝐛𝐞𝐫 𝐛𝐞𝐭𝐰𝐞𝐞𝐧 𝟏 𝐚𝐧𝐝 𝟏𝟎𝟎.");
     }
 
     if (!message) {
-      return reply("❎ Please provide a message to send.");
+      return reply("❎ 𝐏𝐥𝐞𝐚𝐬𝐞 𝐩𝐫𝐨𝐯𝐢𝐝𝐞 𝐚 𝐦𝐞𝐬𝐬𝐚𝐠𝐞 𝐭𝐨 𝐬𝐞𝐧𝐝.");
     }
 
-    reply(`⏳ Sending "${message}" ${count} times. This may take a while...`);
+    reply(`⏳ 𝐒𝐞𝐧𝐝𝐢𝐧𝐠 "${message}" ${count} 𝐭𝐢𝐦𝐞𝐬. 𝐓𝐡𝐢𝐬 𝐦𝐚𝐲 𝐭𝐚𝐤𝐞 𝐚 𝐰𝐡𝐢𝐥𝐞...`);
 
     for (let i = 0; i < count; i++) {
       await conn.sendMessage(m.from, { text: message }, { quoted: m });
       await sleep(1000); // 1-second delay
     }
 
-    reply(`✅ Successfully sent the message ${count} times.`);
+    reply(`✅ 𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 𝐬𝐞𝐧𝐭 𝐭𝐡𝐞 𝐦𝐞𝐬𝐬𝐚𝐠𝐞 ${count} 𝐭𝐢𝐦𝐞𝐬.`);
   } catch (error) {
     console.error("❌ Error in ask command:", error);
-    reply("❎ An error occurred while processing your request.");
+    reply("❎ 𝐀𝐧 𝐞𝐫𝐫𝐨𝐫 𝐨𝐜𝐜𝐮𝐫𝐫𝐞𝐝 𝐰𝐡𝐢𝐥𝐞 𝐩𝐫𝐨𝐜𝐞𝐬𝐬𝐢𝐧𝐠 𝐲𝐨𝐮𝐫 𝐫𝐞𝐪𝐮𝐞𝐬𝐭.");
   }
 });
 
