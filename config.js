@@ -41,4 +41,5 @@ HEART_REACT: process.env.HEART_REACT || "true",
 OWNER_REACT: process.env.OWNER_REACT || "true",
 BOT_NAME: process.env.BOT_NAME || "『 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃 』",
 OMDB_API_KEY: process.env.OMDB_API_KEY || "76cb7f39", // omdbapi.com
+MOVIE_API_KEY: process.env.MOVIE_API_KEY || "sky|2dde95aa5b1ccfcb3e0238489c85bff42ccb02ed",
 };
