@@ -48,7 +48,6 @@ cmd({
 │ 🎙️ ➤ 𝐀𝐔𝐓𝐎 𝐕𝐎𝐈𝐂𝐄: ${statusIcon(config.AUTO_VOICE)}
 │ 🖼️ ➤ 𝐀𝐔𝐓𝐎 𝐒𝐓𝐈𝐂𝐊𝐄𝐑: ${statusIcon(config.AUTO_STICKER)}
 │ 💬 ➤ 𝐀𝐔𝐓𝐎 𝐑𝐄𝐏𝐋𝐘: ${statusIcon(config.AUTO_REPLY)}
-│ ✉️ ➤ 𝐀𝐋𝐈𝐕𝐄 𝐌𝐒𝐆: *${config.ALIVE_MSG}*
 │ 🔗 ➤ 𝐀𝐍𝐓𝐈 𝐋𝐈𝐍𝐊: ${statusIcon(config.ANTI_LINK)}
 │ 🚫 ➤ 𝐀𝐍𝐓𝐈 𝐁𝐀𝐃: ${statusIcon(config.ANTI_BAD)}
 │ ⌨️ ➤ 𝐏𝐑𝐄𝐅𝐈𝐗: *[ ${config.PREFIX} ]*
