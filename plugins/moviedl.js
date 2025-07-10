@@ -18,14 +18,14 @@ cmd({
     filename: __filename
 }, async (robin, m, mek, { from, q, reply }) => {
     try {
-        if (!q || q.trim() === '') return await reply('❌ Please provide a movie name! (e.g., Deadpool)');
+        if (!q || q.trim() === '') return await reply('❌ 𝐏𝐥𝐞𝐚𝐬𝐞 𝐩𝐫𝐨𝐯𝐢𝐝𝐞 𝐚 𝐦𝐨𝐯𝐢𝐞 𝐧𝐚𝐦𝐞! (𝐞.𝐠., 𝐃𝐞𝐚𝐝𝐩𝐨𝐨𝐥)');
 
         // Fetch movie search results
         const searchUrl = `${API_URL}?q=${encodeURIComponent(q)}&api_key=${API_KEY}`;
         let response = await fetchJson(searchUrl);
 
         if (!response || !response.SearchResult || !response.SearchResult.result.length) {
-            return await reply(`❌ No results found for: *${q}*`);
+            return await reply(`❌ 𝐍𝐨 𝐫𝐞𝐬𝐮𝐥𝐭𝐬 𝐟𝐨𝐮𝐧𝐝 𝐟𝐨𝐫: *${q}*`);
         }
 
         const selectedMovie = response.SearchResult.result[0]; // Select first result
@@ -33,7 +33,7 @@ cmd({
         let detailsResponse = await fetchJson(detailsUrl);
 
         if (!detailsResponse || !detailsResponse.downloadLinks || !detailsResponse.downloadLinks.result.links.driveLinks.length) {
-            return await reply('❌ No PixelDrain download links found.');
+            return await reply('❌ 𝐍𝐨 𝐏𝐢𝐱𝐞𝐥𝐃𝐫𝐚𝐢𝐧 𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐥𝐢𝐧𝐤𝐬 𝐟𝐨𝐮𝐧𝐝');
         }
 
         // Select the 720p PixelDrain link
@@ -41,7 +41,7 @@ cmd({
         const selectedDownload = pixelDrainLinks.find(link => link.quality === "SD 480p");
         
         if (!selectedDownload || !selectedDownload.link.startsWith('http')) {
-            return await reply('❌ No valid 480p PixelDrain link available.');
+            return await reply('❌ 𝐍𝐨 𝐯𝐚𝐥𝐢𝐝 𝟒𝟖𝟎𝐩 𝐏𝐢𝐱𝐞𝐥𝐃𝐫𝐚𝐢𝐧 𝐥𝐢𝐧𝐤 𝐚𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞.');
         }
 
         // Convert to direct download link
@@ -74,10 +74,10 @@ cmd({
 
         writer.on('error', async (err) => {
             console.error('Download Error:', err);
-            await reply('❌ Failed to download movie. Please try again.');
+            await reply('❌ 𝐅𝐚𝐢𝐥𝐞𝐝 𝐭𝐨 𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐦𝐨𝐯𝐢𝐞, 𝐏𝐥𝐞𝐚𝐬𝐞 𝐭𝐫𝐲 𝐚𝐠𝐚𝐢𝐧');
         });
     } catch (error) {
         console.error('Error in movie command:', error);
-        await reply('❌ Sorry, something went wrong. Please try again later.');
+        await reply('❌ 𝐒𝐨𝐫𝐫𝐲, 𝐬𝐨𝐦𝐞𝐭𝐡𝐢𝐧𝐠 𝐰𝐞𝐧𝐭 𝐰𝐫𝐨𝐧𝐠. 𝐏𝐥𝐞𝐚𝐬𝐞 𝐭𝐫𝐲 𝐚𝐠𝐚𝐢𝐧 𝐥𝐚𝐭𝐞𝐫');
     }
 });
