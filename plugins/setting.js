@@ -41,7 +41,7 @@ cmd({
         };
 
         // Create the settings message with the updated format
-        let madeSetting = `╭───⚙️ ${config.BOT_NAME} 𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒 ⚙️───╮
+        let madeSetting = `╭───⚙️ 𝐒𝐄𝐓𝐓𝐈𝐍𝐆𝐒 ⚙️───╮
 │
 │ 🟢 ➤ 𝐀𝐔𝐓𝐎 𝐑𝐄𝐀𝐃 𝐒𝐓𝐀𝐓𝐔𝐒: ${statusIcon(config.AUTO_READ_STATUS)}
 │ ⚙️ ➤ 𝐌𝐎𝐃𝐄: *${config.MODE}*
