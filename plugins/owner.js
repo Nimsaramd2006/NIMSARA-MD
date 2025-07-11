@@ -82,7 +82,7 @@ let status = `┌─────────────────────
 ├ ⏰ 𝐑𝐮𝐧𝐭𝐢𝐦𝐞:- ${runtime(process.uptime())}
 ├ 📟 𝐑𝐚𝐦 𝐮𝐬𝐚𝐠𝐞:- ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
 ├ ⚙️ 𝐏𝐥𝐚𝐭𝐟𝐨𝐫𝐦:- ${os.hostname()}
-├ 👨‍💻 𝐎𝐰𝐧𝐞𝐫𝐬:- R>RAJINDU NIMSARA
+├ 👨‍💻 𝐎𝐰𝐧𝐞𝐫𝐬:- R.RAJINDU NIMSARA
 ├ 🧬 𝐕𝐞𝐫𝐬𝐢𝐨𝐧:- 1.0.5
 └───────────────────────
 
