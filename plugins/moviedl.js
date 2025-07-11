@@ -66,7 +66,7 @@ cmd({
                 document: fs.readFileSync(filePath),
                 mimetype: 'video/mp4',
                 fileName: `${selectedMovie.title}-480p.mp4`,
-                caption: `🎬 *${selectedMovie.title}*\n📌 Quality: 480p\n✅ *Download Complete!*`,
+                caption: `🎬 *${selectedMovie.title}*\n📌 Quality: 480p\n✅ *Download Complete!*\n\n> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽𝐃\n\n> 𝐂𝐑𝐄𝐀𝐓𝐄𝐃 𝐁𝐘 𝐑.𝐑𝐀𝐉𝐈𝐍𝐃𝐔 𝐍𝐈𝐌𝐒𝐀𝐑𝐀`,
                 quoted: mek 
             });
             fs.unlinkSync(filePath);
