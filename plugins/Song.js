@@ -24,7 +24,6 @@ async(conn, mek, m, {from, quoted, body, isCmd, command, args, q, isGroup, sende
 
         const audio = data.data;
         const message = `
-
 🎶 𝐘𝐓 𝐒𝐎𝐍𝐆 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 📥
 
 ◈==================================◈
@@ -42,7 +41,7 @@ async(conn, mek, m, {from, quoted, body, isCmd, command, args, q, isGroup, sende
 ┃👍𝐋𝐢𝐤𝐞𝐬: ${audio.likes || 'N/A'}
 ╰─────────────────╯
 
-⦁⦂⦁*━┉━┉━┉━┉━━┉━┉━┉━┉━┉━┉━┉━┉━┉┉┉━⦁⦂⦁
+⦁⦂⦁*━┉━┉━┉━┉━━┉━┉━┉━┉━┉┉━┉━┉━┉┉┉━⦁⦂⦁
 
 > ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃
 `;
