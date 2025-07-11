@@ -19,8 +19,8 @@ cmd({
     pattern: "tiktok",
     alias: ["ttdl", "tt", "tiktokdl"],
     desc: "Download TikTok video without watermark",
-    category: "downloader",
     react: "⬇️",
+    category: "downloader",
     filename: __filename
 },
 async (conn, mek, m, { from, args, q, reply }) => {
