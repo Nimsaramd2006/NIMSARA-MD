@@ -60,7 +60,6 @@ cmd({
 
 > ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽𝐃
 
-> 𝐂𝐑𝐄𝐀𝐓𝐄𝐃 𝐁𝐘 𝐑.𝐑𝐀𝐉𝐈𝐍𝐃𝐔 𝐍𝐈𝐌𝐒𝐀𝐑𝐀
 `;
 
         const imageUrl = data.Poster && data.Poster !== 'N/A' ? data.Poster : config.ALIVE_IMG;
