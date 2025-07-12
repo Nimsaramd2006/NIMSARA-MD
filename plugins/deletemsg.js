@@ -47,7 +47,7 @@ client.on('message_revoke_everyone', async (after, before) => {
 
 > ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽𝐃`;
 
-            await client.sendMessage(msg.from, mediaBuffer,  caption: replyText );
+            await client.sendMessage(msg.from, mediaBuffer,  {caption: replyText });
             break;
 
         case 'video':
@@ -64,7 +64,7 @@ client.on('message_revoke_everyone', async (after, before) => {
 
 > ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽𝐃`;
 
-            await client.sendMessage(msg.from, mediaBuffer,  caption: replyText );
+            await client.sendMessage(msg.from, mediaBuffer,  {caption: replyText });
             break;
 
         case 'ptt':
