@@ -301,7 +301,7 @@ cmd({
 },           
 async (conn, mek, m, { from, args, q, isGroup, senderNumber, botNumber, reply }) => {
     try {
-        if (!isGroup) return reply("*📛 This command can only be used in groups.*");
+        if (!isGroup) return reply("*❌ This command can only be used in groups.*");
 
         // Extract bot owner's number
         const botOwner = conn.user.id.split(":")[0];
@@ -312,10 +312,10 @@ async (conn, mek, m, { from, args, q, isGroup, senderNumber, botNumber, reply })
         }
 
         // Ensure the bot is an admin
-        if (!isBotAdmins) return reply("*📛 I need to be an admin to add users.*");
+        if (!isBotAdmins) return reply("*❌ I need to be an admin to add users.*");
 
         // Validate user input
-        if (!q || isNaN(q)) return reply("*📛 Please provide a valid phone number to add.*");
+        if (!q || isNaN(q)) return reply("*❌ Please provide a valid phone number to add.*");
         
         const userToAdd = `${q}@s.whatsapp.net`;
 
@@ -344,7 +344,7 @@ cmd({
 },           
 async (conn, mek, m, { from, isGroup, isAdmins, isBotAdmins, args, q, reply }) => {
     try {
-        if (!isGroup) return reply("*📛 This command can only be used in groups.*");
+        if (!isGroup) return reply("*❌ This command can only be used in groups.*");
         if (!isAdmins) return reply("*❌ Only group admins can use this command.*");
         if (!isBotAdmins) return reply("❌ I need to be an admin to update the group description.");
         if (!q) return reply("*❌ Please provide a new group description.*");
@@ -367,7 +367,7 @@ cmd({
 },           
 async (conn, mek, m, { from, isGroup, isAdmins, isBotAdmins, args, q, reply }) => {
     try {
-        if (!isGroup) return reply("*📛 This command can only be used in groups.*");
+        if (!isGroup) return reply("*❌ This command can only be used in groups.*");
         if (!isAdmins) return reply("❌ Only group admins can use this command.");
         if (!isBotAdmins) return reply("*📛 I need to be an admin to update the group name.*");
         if (!q) return reply("*⁉️ Please provide a new group name.*");
@@ -400,7 +400,7 @@ async (conn, mek, m, {
 
         const botOwner = conn.user.id.split(":")[0]; 
         if (senderNumber !== botOwner) {
-            return reply("*📛 Only the bot owner can use this command.*");
+            return reply("*❌ Only the bot owner can use this command.*");
         }
 
         reply("*Leaving group...*");
@@ -423,15 +423,15 @@ cmd({
 },           
 async (conn, mek, m, { from, isGroup, isAdmins, isBotAdmins, reply }) => {
     try {
-        if (!isGroup) return reply("❌ This command can only be used in groups.");
-        if (!isAdmins) return reply("*📛 Only group admins can use this command.*");
-        if (!isBotAdmins) return reply("*📛 I need to be an admin to lock the group.*");
+        if (!isGroup) return reply("*❌ This command can only be used in groups.*");
+        if (!isAdmins) return reply("*❌ Only group admins can use this command.*");
+        if (!isBotAdmins) return reply("*❌ I need to be an admin to lock the group.*");
 
         await conn.groupSettingUpdate(from, "locked");
         reply("*✅ Group has been locked. New members cannot join.*");
     } catch (e) {
         console.error("Error locking group:", e);
-        reply("❌ Failed to lock the group. Please try again.");
+        reply("*❌ Failed to lock the group. Please try again.*");
     }
 });
 
