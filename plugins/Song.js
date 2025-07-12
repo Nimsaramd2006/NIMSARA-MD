@@ -6,7 +6,7 @@ const {
 const fetch = require('node-fetch');
 
 cmd({
-  pattern: "song",
+  pattern: "song2",
   category: "downloader",
   react: "🎵",
   desc: "Download YouTube audios as MP3",
