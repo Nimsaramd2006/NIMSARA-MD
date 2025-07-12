@@ -2,7 +2,7 @@ const {cmd , commands} = require('../command')
 cmd({
   pattern: "vv",
   desc: "Resend view-once image",
-  type: "tool",
+  type: "owner",
 }, async (m, conn) => {
   // viewOnce handler here
 });
