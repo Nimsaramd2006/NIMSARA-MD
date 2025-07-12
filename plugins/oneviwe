@@ -1,0 +1,17 @@
+const quoted = m.quoted ? m.quoted : m;
+const viewOnceMsg = quoted?.message?.viewOnceMessage?.message;
+
+if (viewOnceMsg?.imageMessage) {
+  const buffer = await downloadMediaMessage(
+    { message: viewOnceMsg },
+    "buffer",
+    {},
+    { logger, reuploadRequest }
+  );
+
+  await conn.sendMessage(m.chat, {
+    image: buffer,
+    caption: "🔁 Resent view-once image",
+  });
+}
+
