@@ -1,7 +1,12 @@
 {
-"hi":"*ʜɪɪ ᴍʏ ғʀɪᴇɴᴅ ʜᴏᴡ ᴄᴀɴ ɪ ʜᴇʟᴘ ʏᴏᴜ* 👑❤️",
-"botname":"*Yeah Am botname*☺️",
-"botname.":"*Yeah Am botname*☺️",
-"ok":"*HMMM*😊♥️",
-"Okey":"*AHMM*💙🥲"
+".mute":"*❌ Only group, owner can use this command*",
+".unmute":"*❌ Only group, owner can use this command*",
+".del":"*❌ Only the bot owner can use this command.*",
+".add":"*❌ Only group, owner can use this command*",
+".admins":"*❌ Only group, owner can use this command*",
+".groupdesc":"*❌ Only group, admin can use this command*",
+".setsubject":"*❌ Only group, owner can use this command*",
+".unlock":"*❌ Only group, owner can use this command*",
+"..leave":"*❌ Owner command*",
+".repeat":"✳️ 𝐔𝐬𝐞 𝐭𝐡𝐢𝐬 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 𝐥𝐢𝐤𝐞:\n𝐄𝐱𝐚𝐦𝐩𝐥𝐞: .𝐫𝐞𝐩𝐞𝐚𝐭 𝟏𝟎,𝐈 𝐥𝐨𝐯𝐞 𝐲𝐨𝐮",
 }
