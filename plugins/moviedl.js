@@ -38,10 +38,10 @@ cmd({
 
         // Select the 720p PixelDrain link
         const pixelDrainLinks = detailsResponse.downloadLinks.result.links.driveLinks;
-        const selectedDownload = pixelDrainLinks.find(link => link.quality === "SD 480p");
+        const selectedDownload = pixelDrainLinks.find(link => link.quality === "HD 720p");
         
         if (!selectedDownload || !selectedDownload.link.startsWith('http')) {
-            return await reply('❌ 𝐍𝐨 𝐯𝐚𝐥𝐢𝐝 𝟒𝟖𝟎𝐩 𝐏𝐢𝐱𝐞𝐥𝐃𝐫𝐚𝐢𝐧 𝐥𝐢𝐧𝐤 𝐚𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞.');
+            return await reply('❌ 𝐍𝐨 𝐯𝐚𝐥𝐢𝐝 720𝐩 𝐏𝐢𝐱𝐞𝐥𝐃𝐫𝐚𝐢𝐧 𝐥𝐢𝐧𝐤 𝐚𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞.');
         }
 
         // Convert to direct download link
@@ -50,7 +50,7 @@ cmd({
         
         
         // Download movie
-        const filePath = path.join(__dirname, `${selectedMovie.title}-480p.mp4`);
+        const filePath = path.join(__dirname, `${selectedMovie.title}-720p.mp4`);
         const writer = fs.createWriteStream(filePath);
         
         const { data } = await axios({
@@ -65,8 +65,8 @@ cmd({
             await robin.sendMessage(from, {
                 document: fs.readFileSync(filePath),
                 mimetype: 'video/mp4',
-                fileName: `${selectedMovie.title}-480p.mp4`,
-                caption: `🎬 *${selectedMovie.title}*\n📌 Quality: 480p\n✅ *Download Complete!*\n\n> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽𝐃\n\n> 𝐂𝐑𝐄𝐀𝐓𝐄𝐃 𝐁𝐘 𝐑.𝐑𝐀𝐉𝐈𝐍𝐃𝐔 𝐍𝐈𝐌𝐒𝐀𝐑𝐀`,
+                fileName: `${selectedMovie.title}-720p.mp4`,
+                caption: `🎬 *${selectedMovie.title}*\n📌 Quality: 720p\n✅ *Download Complete!*\n\n> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽𝐃\n\n> 𝐂𝐑𝐄𝐀𝐓𝐄𝐃 𝐁𝐘 𝐑.𝐑𝐀𝐉𝐈𝐍𝐃𝐔 𝐍𝐈𝐌𝐒𝐀𝐑𝐀`,
                 quoted: mek 
             });
             fs.unlinkSync(filePath);
