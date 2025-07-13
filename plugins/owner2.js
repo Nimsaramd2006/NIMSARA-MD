@@ -21,7 +21,7 @@ async (conn, mek, m, { from }) => {
                       'VERSION:3.0\n' +
                       `FN:${ownerName}\n` +  // Full Name
                       `ORG:${organization};\n` +  // Organization (Optional)
-                      `TEL;type=CELL;type=VOICE;waid=${ownerNumber.replace('+', '')}:${ownerNumber}\n` +  // WhatsApp ID and number
+                      `TEL;type=CELL;type=VOICE;waid=${ownerNumber.replace('+', '94766351670')}:${ownerNumber}\n` +  // WhatsApp ID and number
                       'END:VCARD';
 
         // Send the vCard first
