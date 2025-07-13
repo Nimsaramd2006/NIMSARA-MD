@@ -43,7 +43,7 @@ const Crypto = require('crypto')
 const path = require('path')
 const prefix = config.PREFIX
 
-const ownerNumber = ['263780934873']
+const ownerNumber = ['94766351670']
 
 //===================SESSION-AUTH============================
 if (!fs.existsSync(__dirname + '/sessions/creds.json')) {
