@@ -57,6 +57,7 @@ let madeMenu = `
 ┃ ◈ *video2*  
 ┃ ◈ *yts*  
 ┃ ◈ *tiktok*
+┃ ◈ *Instagram*
 ┃ ◈ *mp3*
 ┃ ◈ *mp4*
 ┃ ◈ *movie*
