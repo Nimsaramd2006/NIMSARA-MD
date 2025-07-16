@@ -1,4 +1,5 @@
-## 𝛮𝛪𝛭𝑆𝛥𝑅𝛥 - 𝛭𝐷👋
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1000&color=08F707&width=456&lines=%F0%9D%9B%AE%F0%9D%9B%AA%F0%9D%9B%AD%F0%9D%91%86%F0%9D%9B%A5%F0%9D%91%85%F0%9D%9B%A5+-+%F0%9D%9B%AD%F0%9D%90%B7%F0%9F%91%8B;%F0%9D%90%82%F0%9D%90%91%F0%9D%90%84%F0%9D%90%80%F0%9D%90%93%F0%9D%90%84%F0%9D%90%83+%F0%9D%90%81%F0%9D%90%98+%F0%9D%90%91.%F0%9D%90%91%F0%9D%90%80%F0%9D%90%89%F0%9D%90%88%F0%9D%90%8D%F0%9D%90%83%F0%9D%90%94%C2%A0%F0%9D%90%8D%F0%9D%90%88%F0%9D%90%8C%F0%9D%90%92%F0%9D%90%80%F0%9D%90%91%F0%9D%90%80" alt="Typing SVG" /></a>
+
 ![image alt](https://i.ibb.co/5x5pG4X3/SulaMd.jpg)
 
 
