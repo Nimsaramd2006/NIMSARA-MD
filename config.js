@@ -39,7 +39,13 @@ CURRENT_STATUS: process.env.CURRENT_STATUS || "true",
 AUTO_REACT: process.env.AUTO_REACT || "false",
 HEART_REACT: process.env.HEART_REACT || "false",
 OWNER_REACT: process.env.OWNER_REACT || "false",
+OWNER_NUMBER: process.env.OWNER_NUMBER || "94766351670",
+OWNER_EMOJI: process.env.OWNER_EMOJI || "👨🏻‍💻",
 BOT_NAME: process.env.BOT_NAME || "『 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽️𝐃 』",
+AUTO_STATUS_REACT: process.env.AUTO_STATUS_REACT || "true",
+AUTO_STATUS_REPLY: process.env.AUTO_STATUS_REPLY || "false",
+OWNER_NAME: process.env.OWNER_NAME || "𝐑.𝐑𝐀𝐉𝐈𝐍𝐃𝐔 𝐍𝐈𝐌𝐒𝐀𝐑𝐀",
+FOOTER: process.env.FOOTER || "> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽𝐃"
 OMDB_API_KEY: process.env.OMDB_API_KEY || "76cb7f39", // omdbapi.com
 MOVIE_API_KEY: process.env.MOVIE_API_KEY || "sky|2dde95aa5b1ccfcb3e0238489c85bff42ccb02ed",
 };
