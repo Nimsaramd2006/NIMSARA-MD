@@ -53,7 +53,8 @@ let madeMenu = `
 ┃ ◈ *play*
 ┃ ◈ *song* 
 ┃ ◈ *song2*
-┃ ◈ *video*   
+┃ ◈ *video* 
+┃ ◈ *song3*
 ┃ ◈ *video2*  
 ┃ ◈ *yts*  
 ┃ ◈ *tiktok*
