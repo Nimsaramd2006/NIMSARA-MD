@@ -1,42 +1,26 @@
-const { cmd, commands } = require('../command');
+
+const {cmd , commands} = require('../command')
 const yts = require('yt-search');
-const { fetchJson } = require('../lib/functions');
-const ddownr = require('denethdev-ytmp3');
-const config = require('../config');
-// Function to extract the video ID from youtu.be or YouTube links
-function extractYouTubeId(url) {
-    const regex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/|playlist\?list=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
-    const match = url.match(regex);
-    return match ? match[1] : null;
-}
+const fg = require('api-dylux');
 
-// Function to convert any YouTube URL to a full YouTube watch URL
-function convertYouTubeLink(q) {
-    const videoId = extractYouTubeId(q);
-    if (videoId) {
-        return `https://www.youtube.com/watch?v=${videoId}`;
-    }
-    return q;
-}
-
+// -------- Song Download --------
 cmd({
-    pattern: "song",
+    pattern: 'song',
     alias: "yt",
-    desc: "To download songs.",
-    react: "🎵",
-    category: "download",
+    desc: 'download songs',
+    react: "🎶",
+    category: 'download',
     filename: __filename
 },
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
     try {
-        q = convertYouTubeLink(q);
-        if (!q) return reply("*`Need YT_URL or Title`*");
+        if (!q) return reply('*Please enter a Title or url !*');
+
         const search = await yts(q);
         const data = search.videos[0];
         const url = data.url;
 
-        let desc = `
-🎶 𝐘𝐓 𝐒𝐎𝐍𝐆 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 📥
+        let desc = `🎶 𝐘𝐓 𝐒𝐎𝐍𝐆 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 📥
 
 ◈==================================◈
 
@@ -54,11 +38,10 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ┃
 ┗━━━━━━━━━━━━━━𖣔𖣔
 
-╭━━〔🔢 *Reply Number*〕━━┈⊷
+╭━━〔🔢 *Please Reply the option number below*〕━━┈⊷
 ┃◈╭─────────────·๏
 ┃◈┃•1 | Download Audio 🎧
 ┃◈┃•2 | Download Document 📁
-┃◈┃•3 | ᴅᴏᴡɴʟᴏᴀᴅ ᴠᴏɪᴄᴇ 🎤
 ┃◈└───────────┈⊷
 ╰──────────────┈⊷
 
@@ -66,112 +49,111 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
 ${config.FOOTER}
 `;
-let info = `
-${config.FOOTER}
- `;   
-const sentMsg = await conn.sendMessage(from, {
-            image: { url: data.thumbnail},
-            caption: desc,
-  contextInfo: {
-                mentionedJid: ['94760698006@s.whatsapp.net'], // specify mentioned JID(s) if any
-                groupMentions: [],
-                forwardingScore: 1,
-                isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363417070951702@newsletter',
-                    newsletterName: "🎬𝐌𝐎𝐕𝐈𝐄 𝐂𝐈𝐑𝐂𝐋𝐄🎬",
-                    serverMessageId: 999
+
+        const vv = await conn.sendMessage(from, { image: { url: data.thumbnail }, caption: desc }, { quoted: mek });
+
+        conn.ev.on('messages.upsert', async (msgUpdate) => {
+            const msg = msgUpdate.messages[0];
+            if (!msg.message || !msg.message.extendedTextMessage) return;
+
+            const selectedOption = msg.message.extendedTextMessage.text.trim();
+
+            if (msg.message.extendedTextMessage.contextInfo && msg.message.extendedTextMessage.contextInfo.stanzaId === vv.key.id) {
+                switch (selectedOption) {
+                    case '1':
+                        let down = await fg.yta(url);
+                        let downloadUrl = down.dl_url;
+                        await conn.sendMessage(from, { audio: { url:downloadUrl }, caption: '> *©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ꜱᴀʜᴀꜱ ᴛᴇᴄʜ*', mimetype: 'audio/mpeg'},{ quoted: mek });
+                        break;
+                    case '2':               
+                        // Send Document File
+                        let downdoc = await fg.yta(url);
+                        let downloaddocUrl = downdoc.dl_url;
+                        await conn.sendMessage(from, { document: { url:downloaddocUrl }, caption: '> *©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ꜱᴀʜᴀꜱ ᴛᴇᴄʜ*', mimetype: 'audio/mpeg', fileName:data.title + ".mp3"}, { quoted: mek });
+                        await conn.sendMessage(from, { react: { text: '✅', key: mek.key } })
+                        break;
+                    default:
+                        reply("Invalid option. Please select a valid option🔴");
                 }
-            }
-     }, {quoted: mek});
-     
-     const messageID = sentMsg.key.id; // Save the message ID for later reference
 
-
-        // Listen for the user's response
-        conn.ev.on('messages.upsert', async (messageUpdate) => {
-            const mek = messageUpdate.messages[0];
-            if (!mek.message) return;
-            const messageType = mek.message.conversation || mek.message.extendedTextMessage?.text;
-            const from = mek.key.remoteJid;
-            const sender = mek.key.participant || mek.key.remoteJid;
-
-            // Check if the message is a reply to the previously sent message
-            const isReplyToSentMsg = mek.message.extendedTextMessage && mek.message.extendedTextMessage.contextInfo.stanzaId === messageID;
-
-            if (isReplyToSentMsg) {
-                // React to the user's reply (the "1" or "2" message)
-
-                // React to the upload (sending the file)
-                
-
-                if (messageType === '1') {
-                    // Handle option 1 (Audio File)
-                    await conn.sendMessage(from, { react: { text: '⬇️', key: mek.key } });
-                const result = await ddownr.download(url, 'mp3'); // Download in mp3 format
-                const downloadLink = result.downloadUrl;
-                await conn.sendMessage(from, { react: { text: '⬆️', key: mek.key } });  
-                    await conn.sendMessage(from, { 
-                        audio: { url: downloadLink }, 
-                        mimetype: "audio/mpeg" ,
-                        contextInfo: {
-                            externalAdReply: {
-                                title: data.title,
-                                body: data.videoId,
-                                mediaType: 1,
-                                sourceUrl: data.url,
-                                thumbnailUrl: data.thumbnail, // This should match the image URL provided above
-                                renderLargerThumbnail: true,
-                                showAdAttribution: true
-                            }
-                        }
-                    
-                    }, { quoted: mek });
-                    await conn.sendMessage(from,);
-                
-                } else if (messageType === '2') {
-                    // Handle option 2 (Document File)
-                    await conn.sendMessage(from, { react: { text: '⬇️', key: mek.key } });
-                    const result = await ddownr.download(url, 'mp3'); // Download in mp3 format
-                    const downloadLink = result.downloadUrl;
-                await conn.sendMessage(from, { react: { text: '⬆️', key: mek.key } });
-                    await conn.sendMessage(from, {
-                        document: { url: downloadLink},
-                        mimetype: "audio/mp3",
-                        fileName: `${data.title}.mp3`, // Ensure `img.allmenu` is a valid image URL or base64 encoded image
-                        caption: info
-                                            
-                      }, { quoted: mek });
-                      await conn.sendMessage(from, );
-                     } else if (messageType === '3') {
-                     await conn.sendMessage(from, { react: { text: '⬇️', key: mek.key } });
-                    const result = await ddownr.download(url, 'mp3'); // Download in mp3 format
-                    const downloadLink = result.downloadUrl;
-                await conn.sendMessage(from, { react: { text: '⬆️', key: mek.key } });  
-                    await conn.sendMessage(from, { 
-                        audio: { url: downloadLink }, 
-                        mimetype: "audio/mpeg" ,
-                        ptt: "true" ,
-                        contextInfo: {
-                            externalAdReply: {
-                                title: data.title,
-                                body: data.videoId,
-                                mediaType: 1,
-                                sourceUrl: data.url,
-                                thumbnailUrl: data.thumbnail, // This should match the image URL provided above
-                                renderLargerThumbnail: true,
-                                showAdAttribution: true
-                            }
-                        }
-                    
-                    }, { quoted: mek });
-                    await conn.sendMessage(from,); 
-                }
             }
         });
-        
- } catch (e) {
-        console.log(e);
-        reply(`${e}`);
+
+    } catch (e) {
+        console.error(e);
+        await conn.sendMessage(from, { react: { text: '❌', key: mek.key } })
+        reply('An error occurred while processing your request.');
     }
-});  
+});
+
+
+//==================== Video downloader =========================
+
+cmd({
+    pattern: 'video',
+    desc: 'download videos',
+    react: "📽️",
+    category: 'download',
+    filename: __filename
+},
+async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
+    try {
+        if (!q) return reply('*Please enter a query or a url !*');
+
+        const search = await yts(q);
+        const data = search.videos[0];
+        const url = data.url;
+
+        let desc = `*📽️ SAHAS-MD VIDEO DOWNLOADER . .⚙️*
+
+📽️⚙️ TITLE - ${data.title}
+
+📽️⚙️ VIEWS - ${data.views}
+
+📽️⚙️ DESCRIPTION - ${data.description}
+
+📽️⚙️ TIME - ${data.timestamp}
+
+📽️⚙️ AGO - ${data.ago}
+
+*Reply This Message With Option*
+
+*1 Video With Normal Format*
+*2 Video With Document Format*
+
+> *©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ꜱᴀʜᴀꜱ ᴛᴇᴄʜ*`;
+
+        const vv = await conn.sendMessage(from, { image: { url: data.thumbnail }, caption: desc }, { quoted: mek });
+
+        conn.ev.on('messages.upsert', async (msgUpdate) => {
+            const msg = msgUpdate.messages[0];
+            if (!msg.message || !msg.message.extendedTextMessage) return;
+
+            const selectedOption = msg.message.extendedTextMessage.text.trim();
+
+            if (msg.message.extendedTextMessage.contextInfo && msg.message.extendedTextMessage.contextInfo.stanzaId === vv.key.id) {
+                switch (selectedOption) {
+                    case '1':
+                        let downvid = await fg.ytv(url);
+                        let downloadvUrl = downvid.dl_url;
+                        await conn.sendMessage(from, { video : { url:downloadvUrl }, caption: '> *©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ꜱᴀʜᴀꜱ ᴛᴇᴄʜ*', mimetype: 'video/mp4'},{ quoted: mek });
+                        break;
+                    case '2':
+                        let downviddoc = await fg.ytv(url);
+                        let downloadvdocUrl = downviddoc.dl_url;
+                        await conn.sendMessage(from, { document: { url:downloadvdocUrl }, caption: '> *©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ꜱᴀʜᴀꜱ ᴛᴇᴄʜ*', mimetype: 'video/mp4', fileName:data.title + ".mp4" }, { quoted: mek });
+                        break;
+                    default:
+                        reply("Invalid option. Please select a valid option🔴");
+                }
+
+            }
+        });
+
+    } catch (e) {
+        console.error(e);
+        await conn.sendMessage(from, { react: { text: '❌', key: mek.key } })
+        reply('An error occurred while processing your request.');
+    }
+});
+ 
