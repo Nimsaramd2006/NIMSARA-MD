@@ -104,24 +104,34 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         const data = search.videos[0];
         const url = data.url;
 
-        let desc = `*📽️ SAHAS-MD VIDEO DOWNLOADER . .⚙️*
+        let desc = `🎶 𝐘𝐓 𝐒𝐎𝐍𝐆 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 📥
 
-📽️⚙️ TITLE - ${data.title}
+◈==================================◈
 
-📽️⚙️ VIEWS - ${data.views}
+┏━❮ 🩵𝐃𝐄𝐓𝐀𝐋𝐄𝐒🩵 ❯━
+┃
+┃🎵 𝐓𝐢𝐭𝐥𝐞: ${data.title}
+┃
+┃⏱️ 𝐓𝐢𝐦𝐞: ${data.timestamp}
+┃
+┃📊 𝐕𝐢𝐞𝐰𝐬: ${data.views}
+┃
+┃⏰ 𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐝: ${data.ago}
+┃
+┃👍 𝐋𝐢𝐤𝐞𝐬: ${data.likes}
+┃
+┗━━━━━━━━━━━━━━𖣔𖣔
 
-📽️⚙️ DESCRIPTION - ${data.description}
+╭━━〔🔢 *Please Reply the option number below*〕━━┈⊷
+┃◈╭─────────────·๏
+┃◈┃•1 | Download Video 🎧
+┃◈┃•2 | Download Document 📁
+┃◈└───────────┈⊷
+╰──────────────┈⊷
 
-📽️⚙️ TIME - ${data.timestamp}
+⦁⦂⦁*━┉━┉━┉━┉━━┉━┉━┉━┉━┉┉━┉━┉━┉┉┉━⦁⦂⦁
 
-📽️⚙️ AGO - ${data.ago}
-
-*Reply This Message With Option*
-
-*1 Video With Normal Format*
-*2 Video With Document Format*
-
-> *©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ꜱᴀʜᴀꜱ ᴛᴇᴄʜ*`;
+${config.FOOTER}`;
 
         const vv = await conn.sendMessage(from, { image: { url: data.thumbnail }, caption: desc }, { quoted: mek });
 
