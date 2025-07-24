@@ -46,5 +46,5 @@ AUTO_STATUS_REPLY: process.env.AUTO_STATUS_REPLY || "false",
 OWNER_NAME: process.env.OWNER_NAME || "𝐑.𝐑𝐀𝐉𝐈𝐍𝐃𝐔 𝐍𝐈𝐌𝐒𝐀𝐑𝐀",
 FOOTER: process.env.FOOTER || "> ㋛ 𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐍𝐈𝐌𝐒𝛥𝐑𝛥 〽𝐃",
 OMDB_API_KEY: process.env.OMDB_API_KEY || "76cb7f39", // omdbapi.com
-MOVIE_API_KEY: process.env.MOVIE_API_KEY || "sky|2dde95aa5b1ccfcb3e0238489c85bff42ccb02ed",
+MOVIE_API_KEY: process.env.MOVIE_API_KEY || "sky|94aac4f93524e99da72cca4d679ac5975e696390",
 };
